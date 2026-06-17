@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>緑で街は潤うのか？—樹冠被覆率から考える“稼ぐ杉並区”（第1本目）</title>
+<meta name="description" content="樹冠被覆率（アーバンフォレスト）の視点から、杉並区の緑が生む経済・社会的価値を国内外の研究データで検証。“稼ぐ杉並区”を考える第1本目。">
+
+<!-- OGP / Twitter Card（noteのリンクカード用） -->
+<meta property="og:url" content="https://yukinobu-nakamura.github.io/blog/suginami-canopy/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="緑で街は潤うのか？—樹冠被覆率から考える“稼ぐ杉並区”（第1本目）">
+<meta property="og:description" content="樹冠被覆率の視点から、杉並区の緑が生む経済・社会的価値を国内外の研究データで検証。“稼ぐ杉並区”を考える第1本目。">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://yukinobu-nakamura.github.io/blog/suginami-canopy/fig_header.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="緑で街は潤うのか？—樹冠被覆率から考える“稼ぐ杉並区”（第1本目）">
+<meta name="twitter:description" content="樹冠被覆率から杉並区の緑の経済・社会的価値を検証。">
+<style>
+  :root{
+    --green:#2e7d4f; --green-d:#1f5d39; --ink:#1f2328; --sub:#5b6168;
+    --bg:#f6f8f5; --card:#ffffff; --line:#e3e8e1; --accent:#eaf4ed; --warn:#fff7e6;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+    line-height:1.85; font-size:17px; -webkit-text-size-adjust:100%;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:24px 18px 80px;}
+  header.hero{
+    background:linear-gradient(135deg,#eaf4ed 0%,#dcefe2 100%);
+    border:1px solid var(--line); border-radius:16px; padding:28px 22px; margin-bottom:18px;
+  }
+  .badge{display:inline-block; background:var(--green); color:#fff; font-size:12px; font-weight:700;
+    padding:4px 10px; border-radius:999px; letter-spacing:.03em; margin-bottom:12px;}
+  h1{font-size:25px; line-height:1.45; margin:.1em 0 .4em;}
+  .lead{font-size:15.5px; color:var(--sub); margin:0;}
+  /* toggle */
+  .switcher{
+    position:sticky; top:0; z-index:5; background:var(--bg); padding:12px 0; margin:8px 0 18px;
+    display:flex; gap:8px; align-items:center; flex-wrap:wrap; border-bottom:1px solid var(--line);
+  }
+  .switcher .label{font-size:13px; color:var(--sub); margin-right:4px;}
+  .seg{display:inline-flex; background:#e9eee8; border-radius:999px; padding:4px;}
+  .seg button{
+    border:0; background:transparent; cursor:pointer; font-size:14.5px; font-weight:700;
+    color:var(--sub); padding:8px 18px; border-radius:999px; transition:.15s;
+    font-family:inherit;
+  }
+  .seg button.active{background:var(--green); color:#fff; box-shadow:0 1px 4px rgba(0,0,0,.12);}
+  .reading{font-size:12.5px; color:var(--sub); margin-left:auto;}
+  /* content */
+  article{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:26px 22px;}
+  article.hidden{display:none;}
+  h2{font-size:20px; margin:1.7em 0 .5em; padding-left:12px; border-left:5px solid var(--green); line-height:1.5;}
+  h3{font-size:16.5px; margin:1.3em 0 .3em; color:var(--green-d);}
+  p{margin:.7em 0;}
+  a{color:var(--green-d); text-underline-offset:2px;}
+  ul{margin:.6em 0; padding-left:1.3em;}
+  li{margin:.35em 0;}
+  strong{color:#143; }
+  em{font-style:normal;}/* 和文の斜体は読みにくいため無効化（誌名等はそのまま正立で表示） */
+  article img, .hero img{display:block; width:100%; height:auto; border-radius:12px; border:1px solid var(--line);}
+  figure{margin:1.3em 0; padding:0;}
+  figcaption{font-size:12.5px; color:var(--sub); text-align:center; margin-top:8px; line-height:1.6;}
+  .hero figure{margin:16px 0 2px;}
+  blockquote{
+    margin:1.1em 0; padding:14px 16px; background:var(--accent);
+    border-left:5px solid var(--green); border-radius:8px; font-size:15.5px;
+  }
+  blockquote.big{font-size:17px; font-weight:700; text-align:center; color:var(--green-d);}
+  .pull{background:var(--accent); border:1px dashed var(--green); border-radius:10px; padding:12px 16px; margin:1.1em 0; font-weight:700;}
+  .warn{background:var(--warn); border-left:5px solid #e0a52a; border-radius:8px; padding:12px 16px; margin:1.1em 0; font-size:15px;}
+  .fig{
+    background:#eef2ec; border:1px dashed #b9c8bb; border-radius:10px; color:#5b6b5e;
+    padding:18px 14px; text-align:center; font-size:13.5px; margin:1.1em 0;
+  }
+  .fig::before{content:"🖼 画像挿入予定"; display:block; font-weight:700; color:#3f6b4e; margin-bottom:4px;}
+  .next{background:#143d2c; color:#f0f7f1; border-radius:14px; padding:22px; margin-top:8px;}
+  .next h2{color:#fff; border-left-color:#7fd3a0; margin-top:.2em;}
+  .next a{color:#aee9c4;}
+  .next strong{color:#fff;}/* 暗色背景上では太字を白に（既定の濃緑だと埋もれるため） */
+  .next p{color:#f0f7f1;}
+  .sources{font-size:13.5px; color:var(--sub);}
+  .sources h3{color:var(--green-d);}
+  .sources li{word-break:break-all;}
+  .note{font-size:13px; color:var(--sub); border-top:1px solid var(--line); margin-top:24px; padding-top:14px;}
+  table{border-collapse:collapse; width:100%; margin:1em 0; font-size:14.5px;}
+  th,td{border:1px solid var(--line); padding:7px 9px; text-align:left;}
+  th{background:var(--accent);}
+  .big-num{color:var(--green-d); font-weight:800;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <span class="badge">連載 全2本・第1本目</span>
+    <h1>緑で街は潤うのか？<br>—樹冠被覆率から考える“稼ぐ杉並区”</h1>
+    <p class="lead">杉並区長選の候補・<strong>増田よしひこ氏</strong>の政策で、私は「樹冠被覆率（じゅかんひふくりつ）」という言葉を初めて知りました。掲げているのは「みどりで稼ぐ杉並」。緑を増やすと、本当に街は潤うのか？――政治的な好き嫌いは脇に置いて、公的データと査読論文だけで自分で確かめてみました。</p>
+    <figure><img src="fig_header.png" alt="杉並区のまちなみのシルエットの上に、樹冠（木の枝葉のドーム状の影）が広がる見出しイラスト"></figure>
+  </header>
+
+  <!-- TOGGLE -->
+  <div class="switcher">
+    <span class="label">読み方を選べます：</span>
+    <div class="seg" role="tablist" aria-label="表示モード切替">
+      <button id="btn-easy" class="active" onclick="showMode('easy')" role="tab" aria-selected="true">かんたん版（5分）</button>
+      <button id="btn-full" onclick="showMode('full')" role="tab" aria-selected="false">詳細版（出典つき）</button>
+    </div>
+    <span class="reading" id="reading">約5分で読めます</span>
+  </div>
+
+  <!-- ===================== かんたん版 ===================== -->
+  <article id="easy">
+
+    <p>正直に言うと、最初は「また選挙の威勢のいいキャッチフレーズか」と思っていました。でも調べてみると面白い。<strong>同じ杉並区の緑も、どの“ものさし”で測るかで、結論が正反対になる</strong>のです。要点だけ5分でまとめます。</p>
+
+    <h2>① 「樹冠被覆率」＝まちの“木陰”の割合</h2>
+    <p>木の枝葉が、上から見て地面を覆っている割合のこと。「まちにどれだけ木陰があるか」を表す、世界共通の指標です。（※たまに見かける「樹<strong>幹</strong>」は漢字の誤り。正しくは「樹<strong>冠</strong>」＝枝葉）</p>
+
+    <h2>② 杉並の木陰は10年で約4割減った</h2>
+    <p>東京大学の<strong>査読論文</strong>によると、杉並区の樹冠被覆率は <span class="big-num">2013年17.2% → 2022年10.4%</span>（<span class="big-num">約−39.5%</span>）。これは<strong>23区で最大の減少</strong>です。増田氏の言う「約4割減」は、データと一致していました。</p>
+
+    <h2>③ でも「緑被率」で見ると、ほぼ横ばい</h2>
+    <p>区が公式に使う「緑被率」「みどり率」は、ほとんど変わっていません。</p>
+    <ul>
+      <li>緑被率：2012年 <strong>22.17%</strong> → 2022年 <strong>21.99%</strong></li>
+      <li>みどり率：2012年 <strong>23.3%</strong> → 2022年 <strong>23.17%</strong></li>
+    </ul>
+    <p>同じ区・同じ10年で、<strong>木陰なら「4割減」、緑被率なら「横ばい」</strong>。なぜ？――緑被率は木だけでなく<strong>芝・畑・屋上緑化</strong>まで全部数えるからです。実際、杉並では屋上緑化が増える一方、大きな木は約1割減。<strong>緑の“中身”が、木陰から芝・屋上へ入れ替わっていた</strong>のです。</p>
+    <figure><img src="suginami%20kpi.webp" alt="杉並区の樹冠17.2→10.4%、緑被率22.17→21.99%、みどり率23.30→23.17%の変化と増減率"><figcaption>杉並区の3指標の変化（2012/13→2022）。樹冠だけが約4割減。出典：白石・寺田 2024／杉並区みどりの実態調査</figcaption></figure>
+
+    <h2>④ “木陰”が特別な理由 — 暑さと健康</h2>
+    <p>木陰は暑さに直接効きます。査読論文では<strong>樹冠を30%増やすと気温が約−1.5℃</strong>。熱中症の救急搬送は2024年97,578人→2025年は10万人超と過去最多です。</p>
+    <blockquote>豪州の大規模研究では、<strong>樹冠30%以上の地域は心理的苦痛が約31%少なく</strong>、逆に<strong>草地30%以上の地域は約71%多い</strong>（どちらも「緑が少ない地域」との比較）。「緑なら何でもいい」のではなく、<strong>中身が木陰かどうか</strong>が効くのです。</blockquote>
+    <p>緑被率だけ見ていると、この大事な違いが見えなくなる。「樹冠で測ろう」という主張には、ちゃんと科学的な裏づけがありました。</p>
+
+    <div class="pull">世界の主要都市は「30〜40%」を<strong>公的な数値目標</strong>に掲げて動いています。<br>メルボルン <strong>40%（2040年）</strong>・トロント <strong>40%（2050年）</strong>・ニューヨーク <strong>30%</strong>（いずれも市の公式戦略／法）。<br>杉並の現状<strong>10.4%</strong>・目標<strong>15%</strong>は、世界基準ではむしろ控えめ。15%は「ゴール」ではなく「第一歩」です。<br><span style="font-size:13px;color:var(--sub);">※この「15%」は杉並区の公式目標ではなく、<strong>増田氏が公式サイトで掲げた公約値</strong>です（区の公式計画は今も緑被率が主指標）。</span></div>
+    <figure><img src="fig_cities.png" alt="主要都市の樹冠被覆率と目標の横棒グラフ。メルボルン22→40%、トロント30→40%、ニューヨーク23→30%、杉並区10.4→15%"><figcaption>主要都市は「30〜40%」を公的に掲げる。出典：City of Melbourne／City of Toronto／NYC Local Law 148 ほか</figcaption></figure>
+
+    <h2>⑤ で、「みどりで稼ぐ」は本当に稼げる？</h2>
+    <p>ここが一番のポイント。海外研究では「都市の木は投資に見合う」傾向が確認されています（トロントで投資1ドルあたり約1.35〜3.20ドルの便益）。<strong>ただしその多くは、税収のような“稼ぎ”ではなく、医療費や冷房代など“将来の出費を抑える節約”</strong>です。</p>
+    <div class="warn"><strong>大事な前提が2つ。</strong>①「樹冠を増やすと税収が伸びる」という<strong>直接の相関は、はっきり確認されていません</strong>（効果の多くは税収増ではなく医療費・電気代などの“節約”）。②<strong>杉並区に特化した「稼げる」試算も、まだ公的には存在しません</strong>。<br>さらに、緑化で地価が上がれば固定資産税などの税収は増えうる一方、<strong>住民には賃料・税負担の増加</strong>にもなります（「グリーン・ジェントリフィケーション」。米農務省森林局の査読研究 Donovan 2021）。これは批判ではなく、<strong>住民を守る手立てを行政が別途あわせて用意しておくべき“宿題”</strong>として考えたい点です。</div>
+
+    <h2>まとめ（第1本目）</h2>
+    <ul>
+      <li>「約4割減」は<strong>事実</strong>。「樹冠で測るべき」も<strong>理にかなっている</strong>。</li>
+      <li>でも「稼ぐ」は、正確には<strong>「将来の出費を抑える投資」</strong>。杉並専用の試算はまだ無い。</li>
+    </ul>
+    <p>「ただのキャッチフレーズ」という私の最初の見方は、半分外れていました。問題提起は骨太。でも「稼ぐ」の中身はこれから――。</p>
+
+    <blockquote class="big">→ 第2本目では「杉並は実際に稼げるのか」を、ある研究者（匿名）の試算で検証します</blockquote>
+    <p style="text-align:center;"><button class="seg" style="padding:6px;"><span onclick="showMode('full')" style="cursor:pointer;background:var(--green);color:#fff;padding:8px 16px;border-radius:999px;font-weight:700;display:inline-block;">出典つきの詳細版を読む →</span></button></p>
+  </article>
+
+  <!-- ===================== 詳細版 ===================== -->
+  <article id="full" class="hidden">
+
+    <p>正直に白状すると、最初は「また選挙の威勢のいいキャッチフレーズか」と思っていました。「みどりで稼ぐ」なんて、聞こえはいいけれど中身があるのか――と。</p>
+    <p>でも調べ始めると、これがなかなか面白い。<strong>同じ杉並区の緑を、どの「ものさし」で測るかで、見える景色が正反対になる</strong>のです。「緑は守られている」とも「緑は壊滅的に減った」とも言える。どちらが本当の杉並なのか。順番に見ていきます。</p>
+
+    <h2>1. そもそも「樹冠被覆率」って何？</h2>
+    <blockquote class="big">樹冠被覆率 ＝ 木の枝葉が、上から見て地面を覆っている面積の割合</blockquote>
+    <p>つまり「<strong>まちにどれだけ“木陰”があるか</strong>」を表す数字です。英語では urban tree canopy cover（UTC）。アメリカ・カナダ・豪州・ヨーロッパの主要都市が当たり前に使う、緑の国際共通言語です。</p>
+    <p>ひとつ注意点。たまに「樹<strong>幹</strong>（じゅかん＝木の幹）被覆率」と漢字を取り違えた例を見かけますが、正しくは「樹<strong>冠</strong>（枝葉）」。<a href="https://masuda-yoshihiko.com/policy" target="_blank" rel="noopener">増田氏の公式サイト</a>も本人のSNSも、ちゃんと「樹冠」と書いています。「幹の太さ」と「枝葉の広がり」では話がまるで違うので、最初に押さえておきます。</p>
+
+    <h2>2. 杉並の“木陰”は、10年で約4割消えていた</h2>
+    <p>東京大学の研究チーム（寺田徹研究室）が衛星データを解析した<a href="https://www.sciencedirect.com/science/article/pii/S1618866724001298" target="_blank" rel="noopener">査読論文（Shiraishi &amp; Terada, 2024）</a>によると、杉並区の樹冠被覆率はこう変化していました。</p>
+    <ul>
+      <li><strong>杉並区：2013年 17.2% → 2022年 10.4%</strong></li>
+      <li>減少幅は <strong>−6.8ポイント</strong>、割合にして <strong>約−39.5%（およそ4割減）</strong></li>
+      <li>これは <strong>東京23区の中で最大の減少率</strong></li>
+    </ul>
+    <p>23区全体でも木陰は減っています（平均 9.2% → 7.3%、相対−20.6%）。でも杉並区は、その<strong>倍近いスピードで減っている</strong>。10年足らずで、まちの木陰のおよそ4本に1本以上が失われた計算です。増田氏の言う「10年で約4割減」は、東大の査読論文と一致していました。</p>
+    <figure><img src="suginami%20kpi.webp" alt="杉並区の3指標（樹冠被覆率17.2→10.4%、緑被率22.17→21.99%、みどり率23.30→23.17%）の約10年の変化と増減率"><figcaption>図1：杉並区の3つの「みどりの指標」の変化（2012/13→2022）。樹冠だけが約4割減、緑被率・みどり率はほぼ横ばい。<br>出典：白石・寺田 2024／杉並区みどりの実態調査</figcaption></figure>
+
+    <h2>3. ところが「緑被率」で見ると、ほぼ横ばい</h2>
+    <p>同じ杉並区の緑を、区が公式に使う <strong>緑被率</strong> というものさしで見ると、まったく違う絵が出てきます。区の<a href="https://www.city.suginami.tokyo.jp/kusei/ryoka/jitai/1087872.html" target="_blank" rel="noopener">「みどりの実態調査」</a>（5年ごとの公的調査）から、2012年と2022年を並べます。</p>
+    <ul>
+      <li><strong>緑被率：2012年度 22.17% → 2022年度 21.99%</strong>（相対 −0.8%）</li>
+      <li><strong>みどり率：2012年度 23.3% → 2022年度 23.17%</strong>（相対 −0.6%）</li>
+    </ul>
+    <p>ほぼ横ばい。これだけ見れば「杉並の緑は守られています」と言えてしまいます。</p>
+    <div class="pull">同じ区・同じ約10年なのに、ものさしを変えるだけで結論が正反対になる。<br>樹冠で測れば「約4割減（壊滅的）」／緑被率で測れば「ほぼ横ばい（安泰）」。</div>
+    <p>これは誰かがウソをついているわけではありません。<strong>3つのものさしが「測っているもの」が違う</strong>から起きる現象です。</p>
+    <figure><img src="kpi%20compare.webp" alt="樹冠被覆率・緑被率・みどり率の比較表（対象・誰が使うか・国際比較性・強み）"><figcaption>図2：3つの「みどりのものさし」の違い。測っている対象も使う主体も異なる。</figcaption></figure>
+
+    <h3>3つの「みどりのものさし」のちがい</h3>
+    <table>
+      <tr><th>ものさし</th><th>数えるもの</th><th>使う人</th></tr>
+      <tr><td><strong>樹冠被覆率</strong></td><td>木の枝葉だけ（＝木陰）</td><td>世界の主要都市（国際標準）</td></tr>
+      <tr><td><strong>緑被率</strong></td><td>木＋芝＋畑＋屋上緑化</td><td>日本（国土交通省）</td></tr>
+      <tr><td><strong>みどり率</strong></td><td>緑被率＋水面＋公園広場</td><td>東京都・23区</td></tr>
+    </table>
+    <p>緑被率とみどり率は「木以外の緑（芝・屋上・畑）や水面」まで一緒くたに数えます。だから――</p>
+    <blockquote>木陰（樹冠）がごっそり減っても、代わりに芝生や屋上緑化が増えれば、緑被率の数字は下がらない</blockquote>
+    <p>という“からくり”が起きます。実際、杉並区では同じ時期に<strong>屋上緑化が約9,665m²増えた</strong>一方、<strong>大きな木（幹回り90cm以上の大径木）は742本→666本へ約1割減</strong>。緑の総量は保たれても、その<strong>中身が、木陰から芝生・屋上へ静かに入れ替わっている</strong>。これが数字のトリックの正体でした。</p>
+
+    <h2>4. なぜ“木陰”が特別なのか — 暑さと健康</h2>
+    <h3>木陰は「暑さ」に直接効く</h3>
+    <p>夏の暑さは、もう災害級です。総務省消防庁によると、熱中症の救急搬送は――</p>
+    <ul>
+      <li><strong>2024年（5〜9月）：全国 97,578人</strong>（統計開始以来の過去最多）</li>
+      <li><strong>2025年（5〜9月）：全国 100,510人</strong>（ついに10万人を突破し記録更新）</li>
+    </ul>
+    <p>樹木は「日射をさえぎる日陰」と「葉から水を蒸発させる蒸散」の両方で気温を下げます。<a href="https://www.nature.com/articles/s42949-025-00277-x" target="_blank" rel="noopener">査読論文（<em>npj Urban Sustainability</em> 2025）</a>では、<strong>樹冠を10%増やすと約−0.8℃、30%増やすと約−1.5℃</strong>。芝生だけの緑地より2〜4倍冷えます。<a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(22)02585-5/fulltext" target="_blank" rel="noopener">医学誌 <em>The Lancet</em>（2023）</a>は、すべての都市が<strong>樹冠30%を達成すれば、夏の暑さによる早すぎる死の約3分の1が防げる</strong>と推計します。</p>
+    <h3>「木」と「芝」では健康効果が逆になる</h3>
+    <p>私がいちばん驚いたのはここ。<a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2739050" target="_blank" rel="noopener">豪州の大規模研究（<em>JAMA Network Open</em> 2019、約4万7千人）</a>です。</p>
+    <blockquote><strong>樹冠が30%以上の地域</strong>では、樹冠が少ない地域（0〜9%）に比べ、心理的苦痛を新たに抱えるリスクが<strong>約31%低い</strong>（オッズ比0.69）。逆に<strong>草地が30%以上の地域</strong>では、草地が少ない地域（0〜4%）に比べ、心理的苦痛を抱える人が<strong>約71%多い</strong>（オッズ比1.71）。</blockquote>
+    <p style="font-size:14.5px;color:var(--sub);">※厳密には、樹冠の数字は「6年間の<strong>新規発症</strong>（incident）」、草地の数字は「調査時点での<strong>有病</strong>（prevalent）」と、比べ方や基準値（0〜9%／0〜4%）が完全に同一ではありません。それでも「樹冠と草地で効き方が逆」という対比そのものは、同一研究のなかで明確に示されています。</p>
+    <p>「緑を増やす」だけでは足りない。<strong>それが木陰（樹冠）かどうか</strong>が健康を左右する。緑被率だけでは、この決定的な違いが抜け落ちます。「樹冠で測るべき」という増田氏の問題提起には、科学的な裏づけがありました。</p>
+    <figure><img src="fig_effect.png" alt="樹冠・芝・水面で暑さ対策と心の健康への効き方が異なることを示す比較図。樹冠は暑さ◎・健康◎、芝は暑さ△・健康✕（苦痛+71%）、水面は暑さ○・健康はデータ限定"><figcaption>図3：同じ「みどり」でも、中身が樹冠か芝か水面かで効き方が変わる。<br>出典：Astell-Burt & Feng 2019（JAMA Network Open）／npj Urban Sustainability 2025</figcaption></figure>
+
+    <h2>5. 世界の目安「3-30-300ルール」— 杉並はどこに？</h2>
+    <p>緑の「適量」の国際的な目安が <strong>3-30-300ルール</strong>。研究者コニネンダイクが提唱しました。</p>
+    <ul>
+      <li><strong>3</strong>：家・職場・学校から<strong>木が3本以上</strong>見える</li>
+      <li><strong>30</strong>：住む街区の<strong>樹冠被覆率が30%以上</strong></li>
+      <li><strong>300</strong>：最寄りの良質な緑地まで<strong>徒歩300m以内</strong></li>
+    </ul>
+    <p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9415244/" target="_blank" rel="noopener">査読論文（Konijnendijk 2023）</a>で根拠が整理され、<a href="https://unece.org/sites/default/files/2023-03/Urban%20forest%20policy%20brief_final_0.pdf" target="_blank" rel="noopener">国連欧州経済委員会（UN-ECE）の政策ブリーフ</a>でも参照されています。</p>
+    <blockquote class="big">杉並区の樹冠被覆率 10.4% は、国際的な目安「30%」の、およそ3分の1</blockquote>
+    <p>ただし「30%」は理想の到達目標で、世界中が達成しているわけではありません。とはいえ、これは研究者の理想論ではなく、<strong>欧米の主要都市が公的な戦略文書で具体的に掲げている数値目標</strong>でもあります。</p>
+    <table>
+      <tr><th>都市</th><th>現状</th><th>目標</th><th>根拠（公的機関）</th></tr>
+      <tr><td><strong>メルボルン（豪）</strong></td><td>約22%</td><td class="big-num">40%（2040年）</td><td><a href="https://www.melbourne.vic.gov.au/urban-forest-strategy" target="_blank" rel="noopener">City of Melbourne「Urban Forest Strategy」</a>（年3,000本以上の植樹が必要と明記）</td></tr>
+      <tr><td><strong>トロント（加）</strong></td><td>約28〜31%</td><td class="big-num">40%（2050年）</td><td><a href="https://www.toronto.ca/legdocs/mmis/2021/ie/bgrd/backgroundfile-173560.pdf" target="_blank" rel="noopener">City of Toronto「Actions to Reaffirm Toronto's Tree Canopy Target」(2021)</a>（TransformTO NetZeroと整合）</td></tr>
+      <tr><td><strong>ニューヨーク（米）</strong></td><td>約23%</td><td class="big-num">30%</td><td><a href="https://comptroller.nyc.gov/reports/new-york-citys-living-infrastructure-funding-and-managing-nycs-urban-forest-and-tree-canopy/" target="_blank" rel="noopener">NYC「Local Law 148」(2023)</a>で法定化（達成年次は2040年）</td></tr>
+    </table>
+    <p>アメリカの都市林専門NPO（American Forests）も、かつては全米一律で「40%」を推奨していました（現在は密度・気候別の個別目標へ転換）。つまり<strong>世界の主要都市は「30〜40%」を公的に掲げて動いている</strong>。杉並の現状10.4%・目標15%は国際標準から見れば控えめで、<strong>15%は「ゴール」ではなく「最低限の第一歩」</strong>――密集する杉並での現実的な刻み方、と私は受け止めました。</p>
+    <div class="warn"><strong>この「15%」はどこから？</strong> 念のため確認すると、目標15%は<strong>杉並区の公式目標ではありません</strong>。<a href="https://masuda-yoshihiko.com/policy" target="_blank" rel="noopener">増田氏が公式サイト</a>に公約として掲げた数値です（区の公式計画は今も「緑被率」が主指標で、樹冠15%という区の目標は存在しません）。15%という水準自体は、American Forests の「密集都市は15%前後を目安に」という考え方とも整合します。</div>
+    <figure><img src="fig_cities.png" alt="主要都市の樹冠被覆率と目標の横棒グラフ。メルボルン22→40%、トロント30→40%、ニューヨーク23→30%、杉並区10.4→15%"><figcaption>図4：主要都市は「30〜40%」を公的に掲げる。杉並は現状10.4%・目標15%。<br>出典：City of Melbourne／City of Toronto（2021）／NYC Local Law 148 ほか</figcaption></figure>
+    <figure><img src="fig_3_30_300.png" alt="3-30-300ルールの解説図。木が3本見える・街区の樹冠30%以上・300m以内に緑地。杉並の樹冠10.4%は目安30%の約3分の1"><figcaption>図5：世界の目安「3-30-300ルール」。杉並の樹冠10.4%は目安30%の約3分の1。<br>出典：Konijnendijk 2023／UN-ECE 2021</figcaption></figure>
+
+    <h2>6. ひとつ、表現は“盛りすぎ”に注意</h2>
+    <p>中立に確かめると決めた以上、増田氏側の説明にも厳しく目を向けます。樹冠被覆率について「国連機関の事業の基準にも採用」という紹介がありますが、正確には少しニュアンスが違います。</p>
+    <ul>
+      <li>この事業は<strong>FAO（国連食糧農業機関）と米国の民間財団が共同運営</strong>する「Tree Cities of the World」。「国連単独」ではない。</li>
+      <li>樹冠被覆率は「認められた指標」だが、<strong>樹木の本数でも％でもよい任意の指標</strong>。</li>
+      <li><strong>特定の数値（例：30%）の達成が認定条件ではない。</strong></li>
+    </ul>
+    <p>つまり「国連が定めた合格ライン」ではなく「<strong>共同事業で認められた指標のひとつ</strong>」。重要な指標ですが「世界で唯一の正解」ではない、と冷静に押さえます。</p>
+
+    <h2>7. では「みどりで稼ぐ」は本当に稼げるのか</h2>
+    <h3>「都市の木は投資に見合う」は、おおむね支持される</h3>
+    <p><a href="https://www.sciencedirect.com/science/article/abs/pii/S161886671730523X" target="_blank" rel="noopener">系統的レビュー（Song ほか 2018）</a>では、26本中<strong>22本で便益が費用を上回り</strong>ました（平均5.43倍、中央値2.72倍）。ただし研究ごとに数え方が違い単純比較は不可。<a href="https://economics.td.com/domains/economics.td.com/documents/reports/PDF%20modification/Urban%20Forests.pdf" target="_blank" rel="noopener">トロントの試算</a>でも<strong>投資1ドルあたり約1.35〜3.20ドルの便益</strong>（前提により幅あり）。</p>
+    <h3>でも「樹冠を増やす → 区の収入が伸びる」は、まだはっきりしない</h3>
+    <p>大事な区別です。じつは<strong>「樹冠被覆率を増やすと税収（区の収入）が伸びる」という直接の相関は、明確には確認できていません</strong>。便益の多くは、税収のような<strong>“稼ぎ”ではなく、将来の出費を抑える“節約”</strong>だからです。</p>
+    <ul>
+      <li>暑さ・病気が減る → <strong>医療費の節約</strong></li>
+      <li>治水インフラを増やさずに済む → <strong>防災コストの回避</strong></li>
+      <li>冷房需要が下がる → <strong>電気代の削減</strong></li>
+    </ul>
+    <div class="warn">つまり「みどりで稼ぐ」は、正確には「<strong>みどりで&ldquo;将来の出費を抑える&rdquo;賢い投資</strong>」。しかも<strong>杉並区に特化した費用便益の試算は、現時点で公的に示されていません</strong>（海外研究の当てはめは独自試算で参考値どまり）。</div>
+    <h3>「税収が伸びる経路」と、その“裏側”はセットで考える</h3>
+    <p>税収がまったく動かないわけではありません。ひとつ確かな経路があります。<strong>緑化は地価を押し上げる</strong>ことが、複数の査読研究で示されています（米農務省森林局のメタ分析で<a href="https://research.fs.usda.gov/treesearch/52843" target="_blank" rel="noopener">樹冠1%増→住宅価格0.12〜0.21%上昇</a>、日本でも<a href="https://link.springer.com/article/10.1007/s10640-023-00775-5" target="_blank" rel="noopener">12都市で道路沿いの緑が地価を有意に上昇</a>）。地価が上がれば<strong>固定資産税の課税ベースも広がり、税収は増えうる</strong>（※東京23区では固定資産税は東京都が課す都税で、都区財政調整を通じて区の財源にも回ります）。</p>
+    <div class="warn">問題は、その<strong>地価上昇が、住民にとっては賃料や税負担の増加</strong>にもなること。元の住民――とくに賃貸住まいや低所得世帯――が住み続けにくくなる現象は「<strong>グリーン・ジェントリフィケーション</strong>」と呼ばれ、<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8408830/" target="_blank" rel="noopener">米農務省森林局の査読研究（Donovan ほか 2021）</a>などで報告されています（同研究は「樹木は地価上昇要因の1.3%にすぎない」とも限定）。<br>これは「緑を増やすな」という批判ではありません。杉並にはUR賃貸・木造アパート・公営住宅も多く、地域内の格差は無視できない。<strong>だからこそ、家賃補助や住み続けられる仕組みといった住民を守る手立てを、行政が“別の宿題”として最初からセットで検討しておく</strong>必要がある――そこまで考えて初めて「みどりで街全体が潤う」と言えます。</div>
+
+    <h2>8. 第1本目のまとめ</h2>
+    <ul>
+      <li>杉並の<strong>木陰は10年で約4割減</strong>（17.2%→10.4%、−39.5%）。<strong>23区最大</strong>。増田氏の「約4割減」は<strong>事実</strong>。</li>
+      <li>緑被率・みどり率は<strong>ほぼ横ばい</strong>。中身が木陰から芝・屋上に入れ替わったため。トリックでもウソでもない。</li>
+      <li>暑さ・健康に効くのは<strong>木陰</strong>。「樹冠で測ろう」は<strong>理にかなう</strong>。</li>
+      <li>ただし「みどりで稼ぐ」は<strong>「将来の出費を抑える投資」</strong>と読むのが正直。<strong>杉並専用の試算はまだ無く</strong>、副作用への配慮も必要。</li>
+    </ul>
+    <p>検証前の「ただのキャッチフレーズ」という見方は、半分外れていました。<strong>問題提起と方向性は骨太</strong>。でも「稼ぐ」の中身は、まだ詰め切れていない――これが第1本目の暫定的な結論です。</p>
+
+    <div class="sources">
+      <h3>出典一覧（公的機関・査読論文・評価の確立した資料）</h3>
+      <ul>
+        <li>Shiraishi &amp; Terada (2024) <em>Urban Forestry &amp; Urban Greening</em>（Q1査読論文、論文番号128331、東大 寺田研） — <a href="https://www.sciencedirect.com/science/article/pii/S1618866724001298" target="_blank" rel="noopener">ScienceDirect</a></li>
+        <li>杉並区「令和4年度みどりの実態調査報告書」（緑被率21.99%・みどり率23.17%） — <a href="https://www.city.suginami.tokyo.jp/kusei/ryoka/jitai/1087872.html" target="_blank" rel="noopener">杉並区</a></li>
+        <li>杉並区「平成24年度みどりの実態調査報告書」（緑被率22.17%・みどり率23.3%） — <a href="https://www.city.suginami.tokyo.jp/kusei/ryoka/jitai/1014016.html" target="_blank" rel="noopener">杉並区</a></li>
+        <li>総務省消防庁「熱中症情報」（2024年97,578人／2025年100,510人） — <a href="https://www.fdma.go.jp/disaster/heatstroke/post3.html" target="_blank" rel="noopener">消防庁</a></li>
+        <li><em>npj Urban Sustainability</em> (2025) 樹冠と気温 — <a href="https://www.nature.com/articles/s42949-025-00277-x" target="_blank" rel="noopener">Nature</a></li>
+        <li>Iungman et al. (2023) <em>The Lancet</em> 欧州93都市 — <a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(22)02585-5/fulltext" target="_blank" rel="noopener">Lancet</a></li>
+        <li>Astell-Burt &amp; Feng (2019) <em>JAMA Network Open</em> — <a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2739050" target="_blank" rel="noopener">JAMA</a></li>
+        <li>Konijnendijk (2023) 3-30-300ルール <em>J. Forestry Research</em> — <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9415244/" target="_blank" rel="noopener">PMC</a></li>
+        <li>City of Melbourne「Urban Forest Strategy」（22%→40%＠2040） — <a href="https://www.melbourne.vic.gov.au/urban-forest-strategy" target="_blank" rel="noopener">melbourne.vic.gov.au</a></li>
+        <li>City of Toronto「Actions to Reaffirm Toronto's Tree Canopy Target」(2021、40%＠2050) — <a href="https://www.toronto.ca/legdocs/mmis/2021/ie/bgrd/backgroundfile-173560.pdf" target="_blank" rel="noopener">toronto.ca</a></li>
+        <li>NYC Comptroller / NYC Urban Forest Plan（Local Law 148で30%を法定化） — <a href="https://comptroller.nyc.gov/reports/new-york-citys-living-infrastructure-funding-and-managing-nycs-urban-forest-and-tree-canopy/" target="_blank" rel="noopener">comptroller.nyc.gov</a></li>
+        <li>Song et al. (2018) 系統的レビュー <em>Urban Forestry &amp; Urban Greening</em> — <a href="https://www.sciencedirect.com/science/article/abs/pii/S161886671730523X" target="_blank" rel="noopener">ScienceDirect</a></li>
+        <li>TD Economics (2014) Toronto Urban Forests — <a href="https://economics.td.com/domains/economics.td.com/documents/reports/PDF%20modification/Urban%20Forests.pdf" target="_blank" rel="noopener">TD</a></li>
+        <li>Siriwardena, Boyle, Holmes &amp; Wiseman (2016)「The implicit value of tree cover in the U.S.」<em>Ecological Economics</em> 128（米農務省森林局・hedonicメタ分析。樹冠1%増→住宅価格0.12〜0.21%上昇） — <a href="https://research.fs.usda.gov/treesearch/52843" target="_blank" rel="noopener">research.fs.usda.gov</a></li>
+        <li>Springer <em>Environmental and Resource Economics</em> (2023) 日本12都市のhedonic分析（道路沿いの緑が地価を上昇） — <a href="https://link.springer.com/article/10.1007/s10640-023-00775-5" target="_blank" rel="noopener">Springer</a></li>
+        <li>Donovan et al. (2021) green gentrification <em>Forest Policy &amp; Economics</em>（米農務省森林局・査読／樹木は地価上昇要因の1.3%） — <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8408830/" target="_blank" rel="noopener">PMC</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- NEXT -->
+  <div class="next">
+    <h2>【第2本目の予告】では、杉並は実際に“稼げる”のか？</h2>
+    <p>第1本目では「方向性は妥当だが、稼げるかは未検証」というところまで来ました。第2本目では、私と同じ視点で「杉並は緑で実際に稼げるのか」を試算してくれた<strong>研究者（匿名）の検証結果</strong>を紹介します。そして私自身が、その結論は妥当か――いわば“<strong>査読</strong>”――をかけ直します。</p>
+    <p>そのうえで、いちばん知りたかった問いに答えます。</p>
+    <blockquote class="big" style="background:#1f5d39;color:#fff;">増田氏が掲げる“みどりの政策”は、杉並区が行政として本気で実施する意味があるのか？</blockquote>
+    <p>第2本目で、私なりの結論を出します。</p>
+  </div>
+
+  <p class="note">本記事は2026年時点の公開情報・査読論文に基づく、一区民としての中立的な検証です。特定の候補・政党を推進または否定する目的のものではありません。検証できなかった点は「未確認・独自試算」と明記しています。情報は更新されうるため、最新の一次情報もあわせてご確認ください。【連載 全2本・第1本目】</p>
+
+</div>
+
+<script>
+  function showMode(mode){
+    var easy=document.getElementById('easy'), full=document.getElementById('full');
+    var be=document.getElementById('btn-easy'), bf=document.getElementById('btn-full');
+    var reading=document.getElementById('reading');
+    if(mode==='full'){
+      full.classList.remove('hidden'); easy.classList.add('hidden');
+      bf.classList.add('active'); be.classList.remove('active');
+      bf.setAttribute('aria-selected','true'); be.setAttribute('aria-selected','false');
+      reading.textContent='約12〜15分・出典つき';
+    }else{
+      easy.classList.remove('hidden'); full.classList.add('hidden');
+      be.classList.add('active'); bf.classList.remove('active');
+      be.setAttribute('aria-selected','true'); bf.setAttribute('aria-selected','false');
+      reading.textContent='約5分で読めます';
+    }
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+</script>
+</body>
+</html>
