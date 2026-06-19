@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>緑で街は潤うのか？〔第2回〕— 研究者の「杉並は緑で稼げるか」試算をチェックする</title>
+<meta name="description" content="匿名研究者による杉並区の費用便益分析を、公認会計士の視点で点検。社会全体では黒字でも区財政は短期赤字、便益の96.7%は雨水1本に依存——を一般向けに解説。">
+<meta property="og:url" content="https://yukinobu-nakamura.github.io/blog/suginami-canopy-2/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="緑で街は潤うのか？〔第2回〕— 研究者の「杉並は緑で稼げるか」試算をチェックする">
+<meta property="og:description" content="匿名研究者の費用便益分析を点検。社会全体では黒字でも区財政は短期赤字、便益の96.7%は雨水1本に依存。">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://yukinobu-nakamura.github.io/blog/suginami-canopy-2/fig2_deliverable.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="緑で街は潤うのか？〔第2回〕— 杉並は緑で稼げるか">
+<meta name="twitter:description" content="匿名研究者の費用便益分析を公認会計士の視点で点検。">
+<style>
+  :root{
+    --green:#2e7d4f; --green-d:#1f5d39; --ink:#1f2328; --sub:#5b6168;
+    --bg:#f6f8f5; --card:#ffffff; --line:#e3e8e1; --accent:#eaf4ed; --warn:#fff7e6;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+    line-height:1.85; font-size:17px; -webkit-text-size-adjust:100%;}
+  .wrap{max-width:760px; margin:0 auto; padding:24px 18px 80px;}
+  header.hero{background:linear-gradient(135deg,#eaf4ed 0%,#dcefe2 100%);
+    border:1px solid var(--line); border-radius:16px; padding:28px 22px; margin-bottom:18px;}
+  .badge{display:inline-block; background:var(--green); color:#fff; font-size:12px; font-weight:700;
+    padding:4px 10px; border-radius:999px; letter-spacing:.03em; margin-bottom:12px;}
+  h1{font-size:25px; line-height:1.45; margin:.1em 0 .4em;}
+  .lead{font-size:15.5px; color:var(--sub); margin:0;}
+  .embed{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px; margin-bottom:18px;}
+  .embed h2{font-size:16px; margin:.1em 0 .5em; padding:0; border:0; color:var(--green-d);}
+  .embed p{font-size:13.5px; color:var(--sub); margin:.3em 0;}
+  .embed .frame{width:100%; height:520px; border:1px solid var(--line); border-radius:10px; overflow:hidden; background:#fff;}
+  .embed iframe{width:100%; height:100%; border:0;}
+  .btnrow{margin-top:10px;}
+  .btn{display:inline-block; background:var(--green); color:#fff; font-weight:700; font-size:14px;
+    padding:9px 16px; border-radius:999px; text-decoration:none;}
+  .switcher{position:sticky; top:0; z-index:5; background:var(--bg); padding:12px 0; margin:8px 0 18px;
+    display:flex; gap:8px; align-items:center; flex-wrap:wrap; border-bottom:1px solid var(--line);}
+  .switcher .label{font-size:13px; color:var(--sub); margin-right:4px;}
+  .seg{display:inline-flex; background:#e9eee8; border-radius:999px; padding:4px;}
+  .seg button{border:0; background:transparent; cursor:pointer; font-size:14.5px; font-weight:700;
+    color:var(--sub); padding:8px 18px; border-radius:999px; transition:.15s; font-family:inherit;}
+  .seg button.active{background:var(--green); color:#fff; box-shadow:0 1px 4px rgba(0,0,0,.12);}
+  .reading{font-size:12.5px; color:var(--sub); margin-left:auto;}
+  article{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:26px 22px;}
+  article.hidden{display:none;}
+  h2{font-size:20px; margin:1.7em 0 .5em; padding-left:12px; border-left:5px solid var(--green); line-height:1.5;}
+  h3{font-size:16.5px; margin:1.3em 0 .3em; color:var(--green-d);}
+  p{margin:.7em 0;}
+  a{color:var(--green-d); text-underline-offset:2px;}
+  ul,ol{margin:.6em 0; padding-left:1.3em;}
+  li{margin:.35em 0;}
+  strong{color:#143;}
+  em{font-style:normal;}
+  article img{display:block; width:100%; height:auto; border-radius:12px; border:1px solid var(--line); margin:1.3em 0;}
+  .hero img{display:block; width:100%; height:auto; border-radius:12px; border:1px solid var(--line); margin:16px 0 2px;}
+  blockquote{margin:1.1em 0; padding:14px 16px; background:var(--accent); border-left:5px solid var(--green); border-radius:8px; font-size:15.5px;}
+  blockquote.big{font-size:17px; font-weight:700; text-align:center; color:var(--green-d);}
+  .pull{background:var(--accent); border:1px dashed var(--green); border-radius:10px; padding:12px 16px; margin:1.1em 0; font-weight:700;}
+  .warn{background:var(--warn); border-left:5px solid #e0a52a; border-radius:8px; padding:12px 16px; margin:1.1em 0; font-size:15px;}
+  .good{background:#eef6f0; border-left:5px solid var(--green); border-radius:8px; padding:12px 16px; margin:1.1em 0; font-size:15px;}
+  .gloss{font-size:13.5px; color:var(--sub); background:#f3f6f2; border:1px solid var(--line); border-radius:8px; padding:10px 14px; margin:1.1em 0;}
+  table{border-collapse:collapse; width:100%; margin:1em 0; font-size:14px;}
+  th,td{border:1px solid var(--line); padding:7px 9px; text-align:left;}
+  th{background:var(--accent);}
+  .next{background:#143d2c; color:#f0f7f1; border-radius:14px; padding:22px; margin-top:8px;}
+  .next h2{color:#fff; border-left-color:#7fd3a0; margin-top:.2em;}
+  .next a{color:#aee9c4;} .next strong{color:#fff;} .next p{color:#f0f7f1;}
+  .sources{font-size:13.5px; color:var(--sub);}
+  .sources h3{color:var(--green-d);} .sources li{word-break:break-all;}
+  .note{font-size:13px; color:var(--sub); border-top:1px solid var(--line); margin-top:24px; padding-top:14px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <span class="badge">連載 全2本・第2本目（最終回）</span>
+    <h1>緑で街は潤うのか？〔第2回〕<br>— 研究者の「杉並は緑で稼げるか」試算を、私がチェックしてみた</h1>
+    <p class="lead">第1回は「方向性は妥当でも、杉並で実際にいくら稼げるかの試算は公的に存在しない」で終わりました。その後、同じ問題意識を持つ仲間の研究者（匿名）が行った本格的な費用便益分析の<strong>提供を受けました</strong>。今回はその最終成果物を紹介し、<strong>公認会計士の私が、仕事の監査のように一つひとつ点検</strong>します。そして最後に――この政策、私自身の「現時点」での見解を出してみます。</p>
+  </header>
+
+  <!-- 研究者の最終成果物（冒頭に埋め込み）#10/#33 -->
+  <section class="embed">
+    <h2>▼ 研究者の最終成果物（そのまま埋め込み）</h2>
+    <p>どんな立場でも数字をフラットに見ることを信条にする研究者がまとめた、図解版の分析ページです。下のスライドはその要約。</p>
+    <div class="frame"><iframe src="researcher/index.html" title="杉並区樹冠率向上政策 26haシナリオ分析（研究者の成果物）" loading="lazy"></iframe></div>
+    <div class="btnrow"><a class="btn" href="researcher/index.html" target="_blank" rel="noopener">成果物を別タブで全画面で開く →</a></div>
+    <img src="fig2_deliverable.png" alt="研究者の成果物の要約。追加樹冠26ha、便益10.55〜13.50億円（中心11.55億円）、費用2.79〜4.76億円、費用1に対し2.4〜4.1倍の便益">
+  </section>
+
+  <div class="switcher">
+    <span class="label">読み方を選べます：</span>
+    <div class="seg" role="tablist" aria-label="表示モード切替">
+      <button id="btn-easy" class="active" onclick="showMode('easy')" role="tab" aria-selected="true">かんたん版（5分）</button>
+      <button id="btn-full" onclick="showMode('full')" role="tab" aria-selected="false">詳細版（出典つき）</button>
+    </div>
+    <span class="reading" id="reading">約5分で読めます</span>
+  </div>
+
+  <!-- ============ かんたん版 ============ -->
+  <article id="easy">
+    <p>第1回の宿題は「<strong>杉並は緑で実際に稼げるのか</strong>」。これに本格的なCBA（費用便益分析）で挑んだ仲間の研究者（匿名）の分析の提供を受けたので、<strong>公認会計士の私が、仕事の監査のように点検</strong>しました。結論を5分で。</p>
+    <div class="pull">前提：区の公式目標は<strong>緑被率25%</strong>。公式計画は不足<strong>102ha</strong>を「公共系（公園・緑地）約76ha＋残り約26ha（1棟あたり敷き布団1枚分）」と内訳まで示しています。研究者は<strong>その残り約26haを“樹冠（木陰）”で埋めたらどうなるか</strong>を試算しました。</div>
+
+    <h2>① 研究者の答え：社会全体なら黒字</h2>
+    <p>樹冠を<strong>26ha</strong>増やすと、社会全体の便益は約<strong>10.55〜13.50億円</strong>（中心11.55億円）、費用は約<strong>2.79〜4.76億円</strong>。<strong>かけた費用1に対して約2.4〜4.1倍の便益が返る</strong>、という試算でした。</p>
+
+    <h2>② でも黒字は「雨水1本」に乗っている</h2>
+    <p>内訳を開けると、便益の<strong>約96.7%が「雨水（雨を地面にしみ込ませる）」ひとつ</strong>。しかもそれは国交省マニュアルの<strong>0.25haの1事例を約104倍に引き伸ばした</strong>仮置きの数字（国内の雨水処理費に基づく値で、海外値の流用ではありません）。<strong>杉並の実際の降雨・排水データでは確かめていない</strong>ので、ここを実データに替えると結論が動きえます。私の見つけた最大の弱点です。</p>
+    <img src="fig2_composition.png" alt="便益10.55億円の内訳。雨水10.2億円が96.7%、冷房0.3億円、熱中症0.05億円">
+
+    <h2>③ 区の「財布」では短期は赤字</h2>
+    <p>社会全体の黒字と、区役所の財布は別物。雨水や健康の便益は<strong>社会には返っても区の歳入には直接入らない</strong>（地価が上がっても固定資産税は23区では“都の税”）。だから区の財布だけだと<strong>約−2.36億円（年1,400万円規模）の純支出</strong>です。<br>ただし<strong>中長期</strong>では、住環境が良くなり現役世代の定住が進めば区民税の維持でプラスにも転じうる。増田氏は人口減少社会を見据えて<strong>短期の損得より中長期</strong>で区をデザインする立場で、この「短期赤字でも中長期の投資」という性格とは整合します。</p>
+    <img src="fig2_socialfiscal.png" alt="社会全体は黒字、杉並区の直接財政は−2.36億円の純支出で短期赤字">
+
+    <h2>④ 結論（現時点の私の見解）</h2>
+    <p><strong>これは「稼ぐ事業」ではなく、「将来の費用や損失（暑さ・水害・健康の社会的コスト）を減らすための公共投資」</strong>として見るなら、やる意味はあります。研究上も、緑化が“個人の所得を増やす”結びつきは弱く、確かなのは行政としての損失抑制のほう。ただし実施するなら、①雨水便益を杉並の実データに差し替え、②維持費を最初から予算化、③家賃上昇など住民保護をセットに、が条件です。</p>
+    <blockquote class="big">→ 詳しい採点と根拠は「詳細版」へ</blockquote>
+  </article>
+
+  <!-- ============ 詳細版 ============ -->
+  <article id="full" class="hidden">
+    <p>第1回で書いたとおり、私がこの話を知ったのは、杉並区で活動を続ける増田氏とのかかわりがきっかけでした。経済学者でも都市計画の専門家でもない、ただの一人です。ただし、<strong>公認会計士として、作られた計算の結果を検証・チェックする“守り（ディフェンス）”には、それなりに定評があります</strong>。だから今回も、<strong>正式な査読ではなく、仕事で財務数値を監査する感覚で</strong>「この試算は信用していいか」を点検しました。結論を先に言うと、この分析は<strong>「誠実なたたき台」として非常によくできている</strong>。ただし<strong>看板の黒字が、たった1本の便益に乗っている</strong>弱点も抱えています。</p>
+
+    <h2>0. この検証は、何を問うているのか</h2>
+    <p>まず土俵をはっきりさせます。杉並区の<strong>公式目標は「緑被率25%」</strong>（令和14年度＝2032年まで、平成11年から継続）。現況21.99%で、達成には<strong>追加で約102haの緑被地が必要</strong>――しかも、その<strong>内訳まで区の公式計画に書かれています</strong>。</p>
+    <blockquote><a href="https://www.city.suginami.tokyo.jp/documents/5879/5-4.pdf" target="_blank" rel="noopener">改定検討委員会資料（5-4.pdf）</a>：「緑被率25%達成には約102ha必要。<strong>未整備の都市計画公園・緑地で約76ha</strong>、その他公共施設分を引いた<strong>残り約26ha</strong>を区内の建物約12万棟で割ると、<strong>1棟あたり約2.2㎡（＝敷き布団 約1枚分）</strong>」</blockquote>
+    <p>つまり区の計画は、102haのうち<strong>約76haを公共系（公園・緑地）で、残り約26haを民有地で</strong>埋める絵を描いています（102ha・76ha・26haはいずれも区の公式数値）。研究者の検証はここから一歩踏み込み――</p>
+    <blockquote class="big">その「残り約26ha」を“樹冠（木陰）”で埋めたら、いくらかかって、いくら便益が出るのか――を試算する。</blockquote>
+    <div class="good"><strong>【補足】</strong>区の目標「<strong>緑被率25%</strong>」は、木だけでなく<strong>草地・農地・屋上の緑なども合わせて数える“緑全般”の割合</strong>。一方、増田氏が掲げる「<strong>樹冠15%</strong>」は、<strong>木の枝葉（木陰）だけを数える割合</strong>。同じ「みどり」でも測っているものが違う別の物差しです（第1回参照）。今回の26haは、緑全般の穴を“樹冠”で埋める発想で、ちょうど両者の橋渡しの位置づけになります。</div>
+
+    <h3>一般に研究される便益・費用と、今回“数えたもの／数えなかったもの”</h3>
+    <p>研究者は便益10分類・費用14分類を整理したうえで、過大評価を避けて金額化するものをかなり絞り込んでいました。</p>
+    <img src="fig2_scope.png" alt="便益10分類・費用14分類のうち、本体に金額算入したもの／参考指標・除外したものを整理した図">
+    <p>金額化して本体に入れたのは<strong>実質3つ（雨水・冷房・熱中症の一部）だけ</strong>。大気・生物多様性・景観・歩行・住環境価値などは「重要だがエビデンス不十分」として参考指標止まり、死亡を防ぐ便益も限定的です。そのぶん便益は<strong>控えめ</strong>ですが、研究者が釘を刺すように<strong>「全体として保守的」とまでは言い切れません</strong>。費用側にも枯れた木の植え替えや根の補修など未確定の出費がありうるからです。</p>
+
+    <h3>もし増田氏の「樹冠15%」で測り直すと？</h3>
+    <p>今回の26haは「緑被率25%」基準。増田氏が掲げる<strong>樹冠15%</strong>（現状10.4%。第1回のとおり世界の主要都市は30〜40%目標で、15%はその控えめな“第一歩”）を直接の目標にすると、区全体で<strong>+4.6pt＝約157haの樹冠</strong>が必要（第1回試算）＝26haの<strong>約6倍</strong>。研究者の1haあたりの数字を<strong>単純に当てはめて計算すると</strong>こうなります。</p>
+    <img src="fig2_scale.png" alt="緑被率25%基準(26ha・費用2.79〜4.76億・便益11.55億)と樹冠15%基準(157ha・費用17〜29億・便益70億・約6倍)の比較">
+    <p>ただし「6倍すれば済む」話ではありません。便益の96.7%は雨水1本に頼っており、その金額は<strong>もともと1か所の事例を引き伸ばした“当てにならなさ”を抱えた数字</strong>。規模を6倍にすると、その当てにならなさも一緒に6倍に広がります。植える木も、157haを1本あたりの樹冠（育って50〜100㎡）で割ると<strong>ざっと2〜3万本</strong>規模。密集市街地での用地・管理は段違いで、<strong>規模を大きくするほど、この計算はかえって当てにしづらく</strong>なります。</p>
+
+    <h2>1. まず、研究者の「最終成果物」を見る</h2>
+    <p>冒頭に、研究者の図解版ページ（index.html）をそのまま埋め込みました。シナリオの根拠・便益・費用・財政を分けた5本の資料と自己検証サマリーまで揃った本格的なものです。要約スライドが上の図。掲げる数字は――</p>
+    <ul>
+      <li><strong>追加する樹冠：26ha</strong></li>
+      <li><strong>社会全体の便益：約10.55〜13.50億円</strong>（中心11.55億円。30年分を“今の価値”に直した額）</li>
+      <li><strong>費用：約2.79〜4.76億円</strong></li>
+      <li><strong>費用1に対して約2.4〜4.1倍の便益</strong>（専門用語で「費用便益比（B/C）」）</li>
+    </ul>
+    <p>数字だけ見ると「やっぱり緑は儲かる」と思えます。でも――<strong>この研究者は、どんな立場でも数字をフラットに見ることを信条にしている人</strong>。だからこそ私も、結果をうのみにせず点検しようと思えました。実際この分析は<strong>「3つの財布」をきっちり分けています。</strong></p>
+
+    <h2>2. 大事な前提 —「3つの財布」を混ぜない</h2>
+    <ul>
+      <li><strong>社会全体の損得</strong>（区民・来街者・事業者・行政をぜんぶ合わせた費用と便益）→ 政策として理にかなうか</li>
+      <li><strong>杉並区役所の財布</strong>（区の歳出・歳入・歳出削減）→ 区の予算でやれるか</li>
+      <li><strong>住民個人の財布</strong>（維持管理、家賃・地価、落葉清掃）→ 公平性・副作用</li>
+    </ul>
+    <p>「社会全体で黒字」と「区役所の財布が潤う」は<strong>まったく別の話</strong>。この分析は最初にそれを宣言し、最後までブレずに分けていました。ここを混ぜるのが、こういう試算でいちばんありがちな失敗です。</p>
+
+    <h2>3. どうやって「稼げるか」を出したのか</h2>
+    <ol>
+      <li><strong>政策量を決める</strong>：公式の約102ha＝公共系約76ha＋残り約26ha。その26haを対象に置く。</li>
+      <li><strong>便益を金額化</strong>：雨水・暑熱健康・冷房・景観を、過大評価を避けて控えめに。</li>
+      <li><strong>費用を積む</strong>：植樹・維持・予備費を、土地を買わない前提で。</li>
+      <li><strong>費用と便益をくらべる</strong>。</li>
+      <li><strong>区の財布で見直す</strong>：社会便益は区の歳入に直接入らない→区単独だと短期赤字。人口維持は「参考」へ。</li>
+    </ol>
+    <p>ところで、この「費用便益（CBA）」の計算、ざっくりこういう仕組みです。</p>
+    <img src="fig2_cba_explainer.png" alt="費用便益(CBA)の考え方。STEP1 30年分の便益と費用 STEP2 今の価値に割り引いて合計(PV) STEP3 便益÷費用＝B/C">
+    <p>この一つひとつを、第1回の一次資料・査読論文と突き合わせて点検した結果が次の採点表です。</p>
+    <img src="fig2_scorecard.png" alt="点検の採点。計算再現◎、出典の実在◎、二重計上の管理◎、政策量◎、人口維持○、結論の頑健性△、単価・前提△">
+
+    <h2>4. ◎ 評価できた点 —「数字」と「作法」は信頼できる</h2>
+    <h3>4-1. 計算は再現できる</h3>
+    <p>主要計算を電卓で入れ直しても<strong>ほぼ全て原文どおり再現</strong>。将来の便益を“今の価値”に直す係数（30年・割引率4%で17.292）も、各表の全セルも整合。<strong>ごまかしや転記ミスは見つかりませんでした。</strong></p>
+    <h3>4-2. 出典が実在し、忠実</h3>
+    <ul>
+      <li>公式数値（緑被率25%、追加102ha、大径木742→666本、20-64歳人口382,209人ほか）は<strong>杉並区の公式資料・オープンデータと一致</strong>。</li>
+      <li>雨水便益の素材（国交省マニュアルの実例：1,303m³・436円/m³・年568千円）も<strong>原文どおり実在</strong>。</li>
+      <li>査読論文も、たどれた範囲で<strong>すべて実在し要約も正確</strong>（例：<a href="https://www.nature.com/articles/s41467-022-31572-1" target="_blank" rel="noopener">Anguelovski ほか 2022（Nature Communications）</a>、<a href="https://research.fs.usda.gov/treesearch/52843" target="_blank" rel="noopener">Siriwardena ほか 2016（Ecological Economics）</a>）。著者名・誌名・主要数値まで正確に引かれていました。</li>
+    </ul>
+    <h3>4-3.「足さない」勇気がある</h3>
+    <div class="good">良い費用便益分析は「何を足さないか」で品質が決まります。この分析は――<strong>市場価格での土地取得を中心から外す</strong>（買えば数百億円で試算は崩れると自己開示）／<strong>固定資産税を区の歳入にしない</strong>（23区では都税。第1回と同じ整理で正確）／<strong>補助金を二重計上しない</strong>（税金の“移し替え”で資源消費ではない）／地価・大気・炭素・歩行・生物多様性を<strong>あえて金額にせず参考指標止まり</strong>／死亡を防ぐ便益を<strong>下限・中心・高位に分け、大きな数字で結論を決めない</strong>――と、便益をむしろ控えめに積んでいました。</div>
+
+    <h2>5. △ 要注意の点 — 看板の「黒字」はどこまで頑健か</h2>
+    <h3>5-1.【最重要】黒字は、ほぼ「雨水1本」に乗っている</h3>
+    <p>社会全体の便益10.55億円の内訳を見ると――</p>
+    <img src="fig2_composition.png" alt="便益10.55億円の内訳。雨水10.2億円が96.7%、冷房0.3億円、熱中症0.05億円">
+    <p>「費用1に対して2.4〜4.1倍」という看板は<strong>実質的に雨水便益1本に全乗り</strong>。その雨水便益は、国土交通省「<a href="https://www.mlit.go.jp/toshi/park/content/001476808.pdf" target="_blank" rel="noopener">グリーンインフラ活用型都市構築支援事業（費用対効果分析手法マニュアル）</a>」の<strong>0.25ha・1か所のデモ計算</strong>（雨水を年1,303m³減らし、1m³あたり処理費436円を掛けて年約57万円）を、<strong>1haあたりに換算して26haに広げた＝約104倍に引き伸ばした</strong>ものです。「整備前はほぼ全面舗装→整備後はよくしみ込む」という強い前提が26ha全域で一律に成り立つとし、下水道・河川の受け止め容量の上限も見ていないため<strong>金額が大きめに出やすい</strong>。研究者自身も「杉並区・東京都下水道の実処理費・実浸水被害額に置き換える必要がある」と注記。<strong>ここを杉並の実データに差し替えると結論が動きえます。私の点検では最大の要改善点です。</strong></p>
+    <p>一点はっきりさせると、この単価は国交省マニュアルの<strong>“国内の例”に基づく雨水処理費</strong>で、海外値の流用ではありません（前提は日本向け）。問題は海外か国内かではなく、<strong>たった1か所(0.25ha)を約104倍に広げている点</strong>と、<strong>杉並の実際の降雨・排水で確かめていない点</strong>。研究者も「杉並区の具体の降雨予測・処理能力・浸水影響は織り込んでいない（ご指摘のとおり）」と認めています。なお杉並の地下には<a href="https://www.kensetsu.metro.tokyo.lg.jp/river/chusho_seibi/ike" target="_blank" rel="noopener">神田川・環状七号線地下調節池（54万m³）</a>など強力な<strong>グレーインフラ（コンクリート製の下水道・調節池などの設備）</strong>が既にあり、豪雨増で便益が増える方向も、既存設備が受け止めるぶん小さくなる方向もありえます。だからこそ実装前に杉並の実データで確かめるのが筋です。</p>
+    <h3>5-2. 政策量（26ha・76ha）は、公式の裏づけがある</h3>
+    <p>この「102ha − 76ha = 26ha」は研究者が勝手に作った数字ではなく、「0. この検証は、何を問うているのか」で示したとおり区の改定検討委員会資料（5-4.pdf）に<strong>内訳まで公式に明記</strong>されています。<strong>政策量の根拠はむしろ堅い</strong>。研究者は公式の26haを忠実に使っています。</p>
+    <h3>5-3.「死亡を防ぐ価値」と費用単価は“仮置き”</h3>
+    <ul>
+      <li>死亡を1件防ぐ価値（統計的生命価値）を<strong>約2.46億円</strong>と設定。内閣府・国交省が使う水準（約2.3億円）に近く、<strong>メタ分析（複数の研究を統合した分析）が示す中央値2〜6億円の“低め”</strong>。便益を大きく見せない控えめな設定です。</li>
+      <li>費用の単価（植える初期費・毎年の手入れ費・予備費15%）は<strong>杉並区の実際の入札価格で確かめた数字ではなく“仮置き”</strong>。枯れた木の植え替えや根の補修を予備費15%にまとめているため、<strong>費用はやや小さめに出やすい</strong>。</li>
+      <li>将来の便益を“今の価値”に直す割引率は4%だけで計算（上の図解参照）。研究者も「2%も併記したい」と書くが未実施。</li>
+    </ul>
+    <h3>5-4.「人口が維持できれば区税が増える」は、計算の誤りを直して読む</h3>
+    <p>区の財布の参考分析で、「住環境が良くなれば現役世代の転出が減り、<strong>特別区民税（住民税のうち区の税収になる部分）が維持される</strong>」という感度が置かれています。ただ点検すると<strong>計算に誤りがあり、税収増が大きく出すぎていました</strong>（5%・10%が、1〜2%と同じ計算なら本来の1.5〜2倍に膨張）。研究者にも確認のうえ<strong>適切な数値に直した結果</strong>がこちらです。</p>
+    <table>
+      <tr><th>人口維持の度合い</th><th>維持人数</th><th>区民税の増加（今の価値）</th><th>区の戻り具合</th><th>区の差し引き</th></tr>
+      <tr><td>0%（本体）</td><td>0人</td><td>0億円</td><td>0.11</td><td>−2.36億円</td></tr>
+      <tr><td>1%</td><td>約356人</td><td>約3.4億円</td><td>約1.39</td><td>約+1.04億円</td></tr>
+      <tr><td>2%</td><td>約712人</td><td>約6.8億円</td><td>約2.67</td><td>約+4.44億円</td></tr>
+      <tr><td>5%（参考）</td><td>約1,780人</td><td><strong>約17.0億円</strong>（誤り→修正前25.5）</td><td>約6.5</td><td>約+14.6億円</td></tr>
+      <tr><td>10%（参考上限）</td><td>約3,560人</td><td><strong>約34.0億円</strong>（誤り→修正前67.9）</td><td>約12.9</td><td>約+31.6億円</td></tr>
+    </table>
+    <p class="gloss">区民税の額は「維持された現役世代1人あたり、年10万円の区民税を、30年・割引2.5%で“今の価値”に直すと約95.5万円」という研究者の前提から計算。<strong>最終的な費用便益の結論は1〜2%で計算しており、5〜10%はあくまで参考</strong>。だからこの修正は結論には影響しません。</p>
+
+    <h2>6. では、区の「財布」では稼げるのか — 短期は、はっきり赤字</h2>
+    <p>「社会全体の損得（区民・事業者・行政すべての合計）」では黒字でも、<strong>杉並区役所の財布</strong>では様子が変わります。雨水・暑さ・健康の便益の多くは<strong>社会には返っても区の歳入には直接入らない</strong>から。地価が上がっても固定資産税は<strong>23区では区でなく都の税</strong>で、区の財布には直接入りません。だから社会全体は黒字でも区単独では赤字になりうるのです。</p>
+    <img src="fig2_socialfiscal.png" alt="社会全体は黒字、杉並区の直接財政は−2.36億円の純支出で短期赤字、回収率0.11">
+    <p>研究者の試算では、外部財源・民間負担を3割見込んでも、区の直接財政は<strong>約−2.36億円（今の価値）の純支出</strong>。年あたり<strong>約1,400万円/年</strong>。区有施設の冷房費削減で取り戻せるのは投資の約11%だけ。つまり<strong>「みどりで（区が）稼ぐ」は短期の税収では成り立たない</strong>。第1回の結論（「みどりで稼ぐ」＝税収増ではなく将来の出費を抑える投資）と一致します。</p>
+    <p>では中長期は――住環境が良くなり現役世代の定住が進めば、<strong>特別区民税の維持を通じて中長期にはプラスへ転じうる</strong>（参考の1〜2%）。ここで大事なのは、<strong>増田氏が「人口減少社会を見据えて杉並区をデザインする」立場</strong>で、短期の損得より中長期で考えること。この「短期は赤字でも中長期に効く投資」という性格とは整合的です（研究者は人口維持の因果は不確実として参考扱い。私も妥当だと思います）。加えて、便益の柱である雨水について<strong>杉並に当てはまる実データが今あるわけではありません</strong>。実施するなら、杉並の降雨・排水・浸水のデータを取ったうえで費用便益を検討し直す必要があります。</p>
+
+    <h2>7. 見落としてはいけない「副作用」</h2>
+    <p>緑化で住環境が良くなると地価・家賃が上がり、もともと住んでいた人（とくに賃貸・低所得世帯）が住み続けにくくなる――「グリーン・ジェントリフィケーション」。研究者は<a href="https://www.nature.com/articles/s41467-022-31572-1" target="_blank" rel="noopener">Anguelovski ほか 2022</a>（欧米28都市中17都市で関係）や<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9373194/" target="_blank" rel="noopener">Quinton ほか 2022</a>を正確に引き、「人口維持効果を強く断定してはいけない／家賃上昇・転出を監視すべき」と結論。第1回の整理（住民を守る手立てを行政が別途用意すべき）と完全に重なります。</p>
+
+    <h2>8. 結論 — 私の「現時点」での見解</h2>
+    <p><strong>Q. 杉並は緑で「稼げる」のか？</strong></p>
+    <ul>
+      <li><strong>区の財布（税収）で短期に稼ぐ政策ではない</strong>（短期は純支出・年1,400万円規模）。</li>
+      <li><strong>社会全体なら「元は取れる」可能性が高い</strong>（費用1に対し2.4〜4.1倍）。ただし黒字は雨水1本に96.7%依存しており、<strong>杉並の実データで裏を取るまでは“暫定的な黒字”</strong>（その実データは今ないので実施前に取得が必要）。</li>
+    </ul>
+    <p><strong>Q. では、行政として実施する意味は？（現時点の私の見解）</strong></p>
+    <blockquote class="big">「稼ぐ事業」としてではなく、「管理できる負担で、暑さ・水害・健康・住環境の便益を買う公共投資」として見るなら、意味はある。</blockquote>
+    <p>理由は3つ。①<strong>負担が管理可能</strong>（用地を買わず既存改修に組み込めば年1,400万円規模、一般会計約1,800億円から見て判断可能）。②<strong>便益の方向性は第1回で確認済み</strong>（樹冠30%で−1.5℃などを研究者は控えめに計上）。③<strong>緑被率25%は区自身の公式目標</strong>。</p>
+    <p>ただし「やる意味がある」と「いますぐ予算を正当化できる」は別。実施するなら宿題を片づけることが条件です。</p>
+    <div class="warn">
+      ✅ <strong>雨水便益を杉並区・東京都下水道の実データに差し替える</strong>（看板の黒字の頑健性を確認。最優先）<br>
+      ✅ <strong>費用単価を杉並の実勢で1点でも検証</strong>（26ha・76ha・102haは公式値なのでそのまま使える）<br>
+      ✅ <strong>維持管理費を初年度から予算化</strong><br>
+      ✅ <strong>家賃・転出入を監視し、住民を守る手立てをセットに</strong>
+    </div>
+    <p>最後に。2回かけて公的データと査読論文、研究者の本格試算まで突き合わせた、いまの私の見解です。</p>
+    <blockquote class="big" style="background:#1f5d39;color:#fff;">「みどりで稼ぐ」とは、正確には「みどりで“将来の損失を減らし、選ばれ続けるまちを保つ”賢い投資」。区が短期に儲ける話ではないが、誠実に設計すれば、やる価値のある公共投資になりうる。</blockquote>
+    <p>じつは研究をたどると、<strong>緑化が“個人の所得を増やす”という直接の結びつきは弱い</strong>のが正直なところ（緑が住宅価格に反映される研究はありますが、当の研究者も「樹木は価格上昇要因のごく一部」と限定）。むしろ確かなのは、<strong>行政として将来の費用や損失――暑さ・水害・健康にかかる社会的コスト――を減らす</strong>効果のほう。だからこの政策は、<strong>個人が儲かる話ではなく、行政が将来の損失を抑えるための施策</strong>と捉えるのが正確です。投票の判断は、この強さと弱さの両方を見て、ぜひご自身で。</p>
+
+    <div class="sources">
+      <h3>この記事で確認・検証したこと</h3>
+      <ul>
+        <li><strong>一次資料</strong>：研究者の分析パッケージ（README／scenario_evidence／social_cba_benefits／social_cba_costs／fiscal_impact_analysis／index.html／自己検証サマリー）を全文通読。</li>
+        <li><strong>再現</strong>：主要計算（現在価値の係数17.292、雨水・冷房・健康・費用・費用便益比・人口維持感度）を独立に再計算し整合を確認。</li>
+        <li><strong>出典照合</strong>：公式数値（杉並区・国交省）と査読論文の実在・内容を確認。<strong>捏造は見つからなかった。</strong></li>
+        <li><strong>限界</strong>：本記事は正式な学術査読ではなく、公開情報に基づく点検（公認会計士としての検証・チェックの感覚で、なるべく客観的に）。雨水便益の実データ差し替えなど未確認の感度は残る。</li>
+      </ul>
+      <p class="gloss"><strong>用語メモ</strong>：<strong>現在価値（PV）</strong>＝将来のお金を“今の価値”に割り引いて合計した額／<strong>費用便益比（B/C）</strong>＝便益÷費用。1より大きいほど「かけた以上に返る」／<strong>メタ分析</strong>＝複数の研究を統合した分析／<strong>グレーインフラ</strong>＝コンクリート製の下水道・調節池などの設備。</p>
+      <h3>おもな出典</h3>
+      <ul>
+        <li>匿名研究者「杉並区樹冠率向上政策 26haシナリオ分析」（本記事冒頭に埋め込み） — <a href="researcher/index.html" target="_blank" rel="noopener">researcher/index.html</a></li>
+        <li>杉並区「みどりの基本計画 改定検討委員会 資料5-4」（102ha・76ha・26haの内訳） — <a href="https://www.city.suginami.tokyo.jp/documents/5879/5-4.pdf" target="_blank" rel="noopener">杉並区(PDF)</a></li>
+        <li>杉並区「みどりの基本計画／令和4年度みどりの実態調査報告書」 — <a href="https://www.city.suginami.tokyo.jp/kusei/ryoka/jitai/1087872.html" target="_blank" rel="noopener">杉並区</a></li>
+        <li>国土交通省「グリーンインフラ活用型都市構築支援事業（費用対効果分析手法マニュアル）」 — <a href="https://www.mlit.go.jp/toshi/park/content/001476808.pdf" target="_blank" rel="noopener">mlit.go.jp(PDF)</a></li>
+        <li>東京都建設局「調節池・分水路（神田川・環状七号線地下調節池ほか）」 — <a href="https://www.kensetsu.metro.tokyo.lg.jp/river/chusho_seibi/ike" target="_blank" rel="noopener">東京都建設局</a></li>
+        <li>Anguelovski et al. (2022) <em>Nature Communications</em> — <a href="https://www.nature.com/articles/s41467-022-31572-1" target="_blank" rel="noopener">nature.com</a></li>
+        <li>Quinton, Nesbitt &amp; Sax (2022) — <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9373194/" target="_blank" rel="noopener">PMC</a></li>
+        <li>Siriwardena, Boyle, Holmes &amp; Wiseman (2016) <em>Ecological Economics</em> 128 — <a href="https://research.fs.usda.gov/treesearch/52843" target="_blank" rel="noopener">USFS</a></li>
+        <li>総務省消防庁「熱中症情報」 — <a href="https://www.fdma.go.jp/disaster/heatstroke/post3.html" target="_blank" rel="noopener">消防庁</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="next">
+    <h2>連載は完結です。第1回もあわせてどうぞ</h2>
+    <p>第1回（指標と事実＝樹冠は10年で約4割減）と、今回の第2回（費用便益＝社会的には黒字だが区財政は短期赤字、便益は雨水1本依存）を読み合わせると、<strong>「方向は妥当・“稼ぐ”は盛りすぎず・将来の損失を減らす公共投資」</strong>という全体像が見えてきます。</p>
+    <blockquote class="big" style="background:#1f5d39;color:#fff;">緑は、個人が儲かる話ではなく、行政が将来の損失（暑さ・水害・健康のコスト）を減らすための投資。誠実に設計できるかが鍵。</blockquote>
+  </div>
+
+  <p class="note">本記事は2026年時点の公開情報・査読論文・提供を受けた分析資料に基づく点検です。公認会計士として、なるべく客観的な立場から検証に努めました。特定の候補・政党を推進または否定する目的のものではありません。検証できなかった点や独自試算は、その旨を明記しています。【連載 全2本・完結】</p>
+
+</div>
+<script>
+  function showMode(mode){
+    var easy=document.getElementById('easy'), full=document.getElementById('full');
+    var be=document.getElementById('btn-easy'), bf=document.getElementById('btn-full');
+    var reading=document.getElementById('reading');
+    if(mode==='full'){
+      full.classList.remove('hidden'); easy.classList.add('hidden');
+      bf.classList.add('active'); be.classList.remove('active');
+      bf.setAttribute('aria-selected','true'); be.setAttribute('aria-selected','false');
+      reading.textContent='約15〜18分・出典つき';
+    }else{
+      easy.classList.remove('hidden'); full.classList.add('hidden');
+      be.classList.add('active'); bf.classList.remove('active');
+      be.setAttribute('aria-selected','true'); bf.setAttribute('aria-selected','false');
+      reading.textContent='約5分で読めます';
+    }
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+</script>
+</body>
+</html>
