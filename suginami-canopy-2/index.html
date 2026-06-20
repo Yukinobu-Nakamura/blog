@@ -146,6 +146,37 @@
     .scale .pair{grid-template-columns:1fr; gap:8px;}
     .scale .x{width:auto; height:34px; border-radius:999px; margin:0 auto; padding:0 16px;}
   }
+  /* 便益の内訳（旧 fig2_composition をHTML化） */
+  .cmp{margin:1.1em 0;}
+  .cmp .ct{font-weight:700; color:var(--green-d); font-size:18px; margin:0 0 .1em;}
+  .cmp .cs{color:var(--sub); font-size:13px; margin:0 0 1em; line-height:1.6;}
+  .cmp .item{margin:.8em 0;}
+  .cmp .hd{display:flex; justify-content:space-between; gap:10px; font-size:15px; line-height:1.5; margin-bottom:5px;}
+  .cmp .hd .nm{color:var(--ink); flex:1;}
+  .cmp .hd .vl{font-weight:700; color:var(--green-d); white-space:nowrap;}
+  .cmp .track{background:#eef1ee; border-radius:6px; height:22px; overflow:hidden;}
+  .cmp .fill{height:100%; border-radius:6px; min-width:8px;}
+  .cmp .f1{background:#2e7d4f;} .cmp .f2{background:#5676aa;} .cmp .f3{background:#d39a2e;}
+  .cmp .hl{margin-top:14px; background:#fdeee9; border:1px solid #f0c9bb; border-radius:10px; padding:12px 15px;}
+  .cmp .hl .b{color:#be4834; font-weight:800; font-size:16px;}
+  .cmp .hl .s{color:#7a4034; font-size:13.5px; margin-top:.3em; line-height:1.6;}
+  .cmp .note{font-size:12.5px; color:var(--sub); margin:.9em 0 0; line-height:1.7;}
+  /* 社会便益 vs 区財政（旧 fig2_socialfiscal をHTML化） */
+  .sf{margin:1.1em 0;}
+  .sf .tt{font-weight:700; color:var(--green-d); font-size:18px; margin:0 0 1em;}
+  .sf .cols{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .sf .col{background:#fafbfa; border:1px solid var(--line); border-radius:12px; padding:15px 16px;}
+  .sf .col h4{margin:0 0 .5em; font-size:15px; color:var(--green-d);}
+  .sf .col.fis h4{color:#be4834;}
+  .sf .big{font-size:20px; font-weight:800; color:var(--green-d); line-height:1.35;}
+  .sf .col.fis .big{color:#be4834;}
+  .sf .sub{font-size:13.5px; color:var(--sub); margin:.35em 0 .9em; line-height:1.5;}
+  .sf .pill{border-radius:8px; padding:9px 12px; text-align:center; font-weight:700; font-size:15px;}
+  .sf .pill.ok{background:#eef6f0; border:1px solid #cfe3d6; color:var(--green-d);}
+  .sf .pill.ng{background:#fdeee9; border:1px solid #f0c9bb; color:#be4834;}
+  .sf .cn{font-size:12.5px; color:var(--sub); margin:.6em 0 0; line-height:1.6;}
+  .sf .foot{margin-top:13px; background:#eef4f0; border:1px solid #cfe3d6; border-radius:10px; padding:12px 15px; font-size:14px; color:#214; line-height:1.7;}
+  @media (max-width:600px){ .sf .cols{grid-template-columns:1fr;} }
   table{border-collapse:collapse; width:100%; margin:1em 0; font-size:14px;}
   th,td{border:1px solid var(--line); padding:7px 9px; text-align:left;}
   th{background:var(--accent);}
@@ -206,11 +237,47 @@
 
     <h2>② でも黒字は「雨水1本」に乗っている</h2>
     <p>内訳を開けると、便益の<strong>約96.7%が「雨水（雨を地面にしみ込ませる）」ひとつ</strong>。しかもそれは国交省マニュアルの<strong>0.25haの1事例を約104倍に引き伸ばした</strong>仮置きの数字（国交省マニュアルの国内の雨水処理費に関する事例に基づく値）。<strong>杉並区にこの計算へそのまま使える公的データは見当たらず</strong>、研究者も「今後、実績データが取れれば結論は変わりうる」と認めています。杉並区は雨水処理設備が発達している一方、善福寺川などの治水問題も抱えており、便益は増える方向も減る方向もありえます。しかもこの効果は<strong>樹冠（枝葉）だけでなく、土壌や雨庭など“地面の緑化”がセットで生むもの</strong>。<strong>私が最も留意すべきだと考える点です。</strong></p>
-    <img src="fig2_composition.png" alt="便益10.55億円の内訳。雨水10.2億円が96.7%、冷房0.3億円、熱中症0.05億円">
+    <div class="cmp">
+      <p class="ct">社会全体の便益 10.55億円の“中身”</p>
+      <p class="cs">効果を低めに見た10.55億円（死亡を防ぐ便益を除く）の内訳</p>
+      <div class="item">
+        <div class="hd"><span class="nm">雨水（雨を地面にしみ込ませる）</span><span class="vl">10.2億円・96.7%</span></div>
+        <div class="track"><div class="fill f1" style="width:96.7%"></div></div>
+      </div>
+      <div class="item">
+        <div class="hd"><span class="nm">冷房エネルギー削減</span><span class="vl">0.3億円・2.8%</span></div>
+        <div class="track"><div class="fill f2" style="width:2.8%"></div></div>
+      </div>
+      <div class="item">
+        <div class="hd"><span class="nm">熱中症など（命に関わらない分）</span><span class="vl">0.05億円・0.5%</span></div>
+        <div class="track"><div class="fill f3" style="width:0.5%"></div></div>
+      </div>
+      <div class="hl"><span class="b">便益の約96.7%が「雨水」ひとつ。</span><div class="s">＝「費用1に対し2.4〜4.1倍」という結論は、実質この1本に乗っている。</div></div>
+      <p class="note">※雨水の金額は国交省マニュアルの国内事例（0.25ha・1か所）の単価を約104倍に広げた仮置き。杉並の実際の降雨・排水で要検証。</p>
+    </div>
 
     <h2>③ 区の「財布」では短期は赤字</h2>
     <p>社会全体の黒字と、杉並区の財布は別物。雨水や健康の便益は<strong>区民の暮らしは良くしても、区役所に入るお金（税収など）としては戻ってこない</strong>（地価が上がっても固定資産税は23区では“都の税”）。だから区の財布だけだと<strong>約−2.36億円の純支出（30年で割ると年あたり約1,400万円）</strong>です。<br>ただし<strong>中長期</strong>では、住環境が良くなり現役世代の定住が進めば区民税の維持でプラスにも転じうる。増田氏は人口減少社会を見据えて<strong>短期の損得より中長期</strong>で区をデザインする立場で、この「短期赤字でも中長期の投資」という性格とは整合します。</p>
-    <img src="fig2_socialfiscal.png" alt="社会全体は黒字、杉並区の直接財政は−2.36億円の純支出で短期赤字">
+    <div class="sf">
+      <p class="tt">社会全体では黒字、でも区の“財布”では短期赤字</p>
+      <div class="cols">
+        <div class="col soc">
+          <h4>社会全体（費用対効果）</h4>
+          <div class="big">便益 約11.55億円</div>
+          <div class="sub">費用 約2.79〜4.76億円</div>
+          <div class="pill ok">B/C 約2.4〜4.1（黒字）</div>
+          <div class="cn">※ただし便益の大半は雨水1本に依存</div>
+        </div>
+        <div class="col fis">
+          <h4>杉並区の財布（直接財政）</h4>
+          <div class="big">純支出 約−2.36億円(PV)</div>
+          <div class="sub">≒ 年1,400万円／財政ROI 0.11</div>
+          <div class="pill ng">短期は赤字（純支出）</div>
+          <div class="cn">※人口維持1〜2%なら参考上は黒字化も（不確実）</div>
+        </div>
+      </div>
+      <div class="foot">「稼ぐ」の正体は税収増ではなく、社会的便益と将来コストの抑制（第1回の結論と一致）。</div>
+    </div>
 
     <h2>④ 結論（現時点の私の見解）</h2>
     <p><strong>これは「稼ぐ事業」というより、むしろ「将来の費用や損失（暑さ・水害・健康の社会的コスト）を減らすための公共投資」</strong>として見るなら、やる意味はあります。杉並区の財布だけ見れば赤字でも、東京都民・日本国民まで含めた社会全体の目線で見れば元は取れる可能性が高く、一人ひとりにとっても、暑さがやわらぐ・水害が減る・健康が守られるといった、<strong>税収には表れない暮らしの恩恵</strong>がたくさんあります。研究上も、緑化が“個人の所得を増やす”結びつきは弱く、確かなのは行政としての損失抑制のほう。ただし実施するなら、①雨水便益を杉並の実データに差し替え、②維持費を最初から予算化、③家賃上昇など住民保護をセットに、が条件です。</p>
@@ -408,7 +475,24 @@
     <h2>5. △ 要注意の点 — 結論の「黒字」はどこまで確かか</h2>
     <h3>5-1.【最重要】黒字は、ほぼ「雨水1本」に乗っている</h3>
     <p>社会全体の便益のうち、効果を低めに見た<strong>10.55億円</strong>（中心の11.55億円から、死亡を防ぐ便益1.0億円を除いたぶん）の内訳を見ると――</p>
-    <img src="fig2_composition.png" alt="便益10.55億円の内訳。雨水10.2億円が96.7%、冷房0.3億円、熱中症0.05億円">
+    <div class="cmp">
+      <p class="ct">社会全体の便益 10.55億円の“中身”</p>
+      <p class="cs">効果を低めに見た10.55億円（死亡を防ぐ便益を除く）の内訳</p>
+      <div class="item">
+        <div class="hd"><span class="nm">雨水（雨を地面にしみ込ませる）</span><span class="vl">10.2億円・96.7%</span></div>
+        <div class="track"><div class="fill f1" style="width:96.7%"></div></div>
+      </div>
+      <div class="item">
+        <div class="hd"><span class="nm">冷房エネルギー削減</span><span class="vl">0.3億円・2.8%</span></div>
+        <div class="track"><div class="fill f2" style="width:2.8%"></div></div>
+      </div>
+      <div class="item">
+        <div class="hd"><span class="nm">熱中症など（命に関わらない分）</span><span class="vl">0.05億円・0.5%</span></div>
+        <div class="track"><div class="fill f3" style="width:0.5%"></div></div>
+      </div>
+      <div class="hl"><span class="b">便益の約96.7%が「雨水」ひとつ。</span><div class="s">＝「費用1に対し2.4〜4.1倍」という結論は、実質この1本に乗っている。</div></div>
+      <p class="note">※雨水の金額は国交省マニュアルの国内事例（0.25ha・1か所）の単価を約104倍に広げた仮置き。杉並の実際の降雨・排水で要検証。</p>
+    </div>
     <p>「費用1に対して2.4〜4.1倍」という中心の結論は<strong>実質的に雨水便益1本に全面的に依存</strong>しています。その雨水便益は、国土交通省「<a href="https://www.mlit.go.jp/toshi/park/content/001476808.pdf#page=24" target="_blank" rel="noopener">グリーンインフラ活用型都市構築支援事業（費用対効果分析手法マニュアル）p.23〜24</a>」の<strong>0.25ha・1か所の計算例</strong>（A市k公園。雨水を年1,303m³減らし、1m³あたり処理費436円を掛けて年約568千円＝約57万円）を、<strong>1haあたりに換算して26haに広げた＝約104倍に引き伸ばした</strong>ものです。「整備前はほぼ全面舗装→整備後はよくしみ込む」という強い前提が26ha全域で一律に成り立つとし、下水道・河川の受け止め容量の上限も見ていないため<strong>金額が大きめに出やすい</strong>。研究者自身も「杉並区・東京都下水道の実処理費・実浸水被害額に置き換える必要がある」と注記。<strong>ここを杉並区の実データに差し替えると、結論が動く可能性があります。</strong></p>
     <div class="calc"><b>計算根拠（雨水10.2億円）</b>：<span class="f">568千円 ÷ 0.25ha ＝ 2.272百万円/ha・年</span> → 30年・4%PVに <span class="f">× 17.292 ＝ 39.3百万円/ha</span> → <span class="f">× 26ha ＝ 約10.2億円</span>。「104倍」は対象面積の比 <span class="f">26ha ÷ 0.25ha ＝ 104</span>。元の単価は国交省マニュアル p.24 の実在値。</div>
     <div class="calc"><b>もう一点、注意</b>　この国交省の例は<strong>「舗装を、土のある草地・樹木の多い公園に変える」＝地面の緑化による浸透効果</strong>です。雨をしみ込ませているのは樹冠（枝葉）そのものではなく、土壌・雨庭・透水性舗装などの<strong>地表の緑（グリーンインフラ）</strong>。つまりこの便益を得るには、樹冠を増やすだけでなく<strong>地表の浸透設備をセットで整備する必要</strong>があります（研究者の試算でも、樹冠26haに対して地表整備13haを見込んでいます）。</div>
@@ -435,7 +519,26 @@
 
     <h2>6. では、区の「財布」では稼げるのか — 短期は、はっきり赤字</h2>
     <p>「社会全体の損得（区民・事業者・行政すべての合計）」では黒字でも、<strong>杉並区の財布</strong>では様子が変わります。雨水・暑さ・健康の便益は、<strong>区民や社会全体の暮らしを良くはしても、その多くは「区役所に入るお金（税収など）」としては戻ってこない</strong>からです。たとえば地価が上がっても、固定資産税は<strong>23区では区でなく都の税</strong>なので、区の財布には直接入りません。だから社会全体は黒字でも、区単独では赤字になりうるのです。</p>
-    <img src="fig2_socialfiscal.png" alt="社会全体は黒字、杉並区の直接財政は−2.36億円の純支出で短期赤字、回収率0.11">
+    <div class="sf">
+      <p class="tt">社会全体では黒字、でも区の“財布”では短期赤字</p>
+      <div class="cols">
+        <div class="col soc">
+          <h4>社会全体（費用対効果）</h4>
+          <div class="big">便益 約11.55億円</div>
+          <div class="sub">費用 約2.79〜4.76億円</div>
+          <div class="pill ok">B/C 約2.4〜4.1（黒字）</div>
+          <div class="cn">※ただし便益の大半は雨水1本に依存</div>
+        </div>
+        <div class="col fis">
+          <h4>杉並区の財布（直接財政）</h4>
+          <div class="big">純支出 約−2.36億円(PV)</div>
+          <div class="sub">≒ 年1,400万円／財政ROI（回収率）0.11</div>
+          <div class="pill ng">短期は赤字（純支出）</div>
+          <div class="cn">※人口維持1〜2%なら参考上は黒字化も（不確実）</div>
+        </div>
+      </div>
+      <div class="foot">「稼ぐ」の正体は税収増ではなく、社会的便益と将来コストの抑制（第1回の結論と一致）。</div>
+    </div>
     <p>研究者の試算では、外部財源・民間負担を3割見込んでも、区の直接財政は<strong>約−2.36億円（今の価値）の純支出</strong>。30年で割ると<strong>年あたり約1,400万円</strong>。区有施設の冷房費削減で取り戻せるのは投資の約11%。つまり<strong>目先の財政だけを見ていては、この政策の値打ちは見えてきません</strong>。第1回の結論（「みどりで稼ぐ」＝税収増ではなく将来の出費を抑える投資）と一致します。</p>
     <div class="calc"><b>計算根拠（区財政）</b>：純支出 <span class="f">冷房費削減0.30億円 − 区負担2.66億円 ＝ −2.36億円</span>（標準ケース：総費用3.80億円のうち外部財源・民間負担30%＝1.14億円を差し引いた区負担2.66億円）。年額 <span class="f">2.36億円 ÷ 17.292 ≒ 0.14億円＝約1,400万円/年</span>。財政回収率（ROI）<span class="f">0.30億円 ÷ 2.66億円 ≒ 0.11</span>。冷房費削減0.30億円は <span class="f">区立施設電力42,280,305kWh × 冷房20% × 削減3% × 30円 ＝ 約7.6百万円/年</span> を102ha規模PV(約1.3億円)に直し、26ha分に按分(×26÷102)した値。出典：研究者 fiscal_impact_analysis.md。</div>
     <p>では中長期は――住環境が良くなり現役世代の定住が進めば、<strong>特別区民税の維持を通じて中長期にはプラスへ転じうる</strong>（参考の1〜2%）。ここで大事なのは、<strong>増田氏が「人口減少社会を見据えて杉並区をデザインする」立場</strong>で、短期の損得より中長期で考えること。この「短期は赤字でも中長期に効く投資」という性格とは整合的です（研究者は人口維持の因果は不確実として参考扱い。私も妥当だと思います）。加えて、便益の柱である雨水について<strong>杉並に当てはまる実データが今あるわけではありません</strong>。実施するなら、杉並の降雨・排水・浸水のデータを取ったうえで費用対効果を検討し直す必要があります。</p>
