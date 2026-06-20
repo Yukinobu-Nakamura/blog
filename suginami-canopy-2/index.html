@@ -75,6 +75,19 @@
   .warn{background:var(--warn); border-left:5px solid #e0a52a; border-radius:8px; padding:12px 16px; margin:1.1em 0; font-size:15px;}
   .good{background:#eef6f0; border-left:5px solid var(--green); border-radius:8px; padding:12px 16px; margin:1.1em 0; font-size:15px;}
   .gloss{font-size:13.5px; color:var(--sub); background:#f3f6f2; border:1px solid var(--line); border-radius:8px; padding:10px 14px; margin:1.1em 0;}
+  .scope{border:1px solid var(--line); border-radius:12px; background:#fafbfa; padding:16px; margin:1.3em 0;}
+  .scope .stitle{font-weight:700; color:var(--green-d); font-size:17px; margin:0;}
+  .scope .ssub{color:var(--sub); font-size:13.5px; margin:.2em 0 .8em;}
+  .scope .legend{display:flex; flex-wrap:wrap; gap:6px 16px; font-size:13px; margin:.2em 0 .9em;}
+  .scope .cols{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .scope .col{background:#fff; border:1px solid var(--line); border-radius:10px; padding:12px 14px;}
+  .scope .col h4{margin:.1em 0 .5em; font-size:15px; color:var(--green-d);}
+  .scope ul{list-style:none; margin:0; padding:0;}
+  .scope li{font-size:14.5px; margin:.35em 0; padding-left:1.7em; text-indent:-1.7em; line-height:1.6;}
+  .scope .snote{font-size:12.5px; color:var(--sub); margin:.9em 0 0; line-height:1.7;}
+  .mk{display:inline-block; width:1.5em; text-align:center; font-weight:700;}
+  .mk-in{color:#2e7d4f;} .mk-part{color:#5676aa;} .mk-kpi{color:#8a8f8b;} .mk-ex{color:#be4834;}
+  @media (max-width:600px){ .scope .cols{grid-template-columns:1fr;} }
   table{border-collapse:collapse; width:100%; margin:1em 0; font-size:14px;}
   th,td{border:1px solid var(--line); padding:7px 9px; text-align:left;}
   th{background:var(--accent);}
@@ -148,7 +161,47 @@
 
     <h3>一般に研究される便益・費用と、今回“数えたもの／数えなかったもの”</h3>
     <p>研究者は便益10分類・費用14分類を整理したうえで、過大評価を避けて金額化するものをかなり絞り込んでいました。</p>
-    <img src="fig2_scope.png" alt="便益10分類・費用14分類のうち、本体に金額算入したもの／参考指標・除外したものを整理した図">
+    <div class="scope">
+      <p class="stitle">樹冠政策の便益・費用と、今回の検証の範囲</p>
+      <p class="ssub">――何を“数えた”か／何を“数えなかった”か</p>
+      <div class="legend">
+        <span><span class="mk mk-in">●</span>金額化して本体に算入</span>
+        <span><span class="mk mk-part">◐</span>一部・別枠・感度のみ</span>
+        <span><span class="mk mk-kpi">○</span>KPI止まり／未計上</span>
+        <span><span class="mk mk-ex">✕</span>中心ケースから除外</span>
+      </div>
+      <div class="cols">
+        <div class="col">
+          <h4>便益（一般に研究される10分類）</h4>
+          <ul>
+            <li><span class="mk mk-in">●</span>雨水流出抑制（本体の中心）</li>
+            <li><span class="mk mk-part">◐</span>暑熱緩和・健康（下限のみ本体）</li>
+            <li><span class="mk mk-in">●</span>冷房エネルギー削減（小）</li>
+            <li><span class="mk mk-part">◐</span>景観・心理的快適性（拡張に50%）</li>
+            <li><span class="mk mk-kpi">○</span>大気質改善</li>
+            <li><span class="mk mk-kpi">○</span>炭素固定・排出削減</li>
+            <li><span class="mk mk-kpi">○</span>不動産・住環境価値（別枠）</li>
+            <li><span class="mk mk-kpi">○</span>歩行・外出の促進</li>
+            <li><span class="mk mk-kpi">○</span>生物多様性・環境教育</li>
+            <li><span class="mk mk-kpi">○</span>地域コミュニティ形成</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h4>費用（主な分類）</h4>
+          <ul>
+            <li><span class="mk mk-in">●</span>植樹・植栽整備費</li>
+            <li><span class="mk mk-in">●</span>維持管理費（剪定・灌水・清掃）</li>
+            <li><span class="mk mk-part">◐</span>設計・更新・根上がり・事故等</li>
+            <li><span class="mk mk-part">◐</span>行政運営・制度管理（一括15%）</li>
+            <li><span class="mk mk-ex">✕</span>用地取得費（市場価格で買うと数百億円→試算が崩れる）</li>
+            <li><span class="mk mk-part">◐</span>民有地補助（社会では“移転”）</li>
+            <li><span class="mk mk-kpi">○</span>住民の未補助負担</li>
+            <li><span class="mk mk-kpi">○</span>交通・駐車の機会費用</li>
+          </ul>
+        </div>
+      </div>
+      <p class="snote">今回 金額化して本体に入れたのは、便益では実質「雨水・冷房・熱中症の一部」の3つだけ。残りは過大評価を避けてKPIや別枠に。費用は初期整備・維持管理が中心で、用地取得は中心ケースから除外。出典：研究者の分析パッケージ（便益10分類・費用14分類）を筆者要約。</p>
+    </div>
     <p>金額化して本体に入れたのは<strong>実質3つ（雨水・冷房・熱中症の一部）だけ</strong>。大気・生物多様性・景観・歩行・住環境価値などは「重要だがエビデンス不十分」として参考指標止まり、死亡を防ぐ便益も限定的です。そのぶん便益は<strong>控えめ</strong>ですが、研究者が釘を刺すように<strong>「全体として保守的」とまでは言い切れません</strong>。費用側にも枯れた木の植え替えや根の補修など未確定の出費がありうるからです。</p>
 
     <h3>もし増田氏の「樹冠15%」で測り直すと？</h3>
