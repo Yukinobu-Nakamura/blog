@@ -88,9 +88,9 @@
   .mk{display:inline-block; width:1.5em; text-align:center; font-weight:700;}
   .mk-in{color:#2e7d4f;} .mk-part{color:#5676aa;} .mk-kpi{color:#8a8f8b;} .mk-ex{color:#be4834;}
   @media (max-width:600px){ .scope .cols{grid-template-columns:1fr;} }
-  .calc{background:#f4f7fb; border:1px solid #d8e2ef; border-left:4px solid #5676aa; border-radius:8px; padding:10px 14px; margin:.8em 0; font-size:13.5px; color:#2a3b55;}
+  .calc{background:#f4f7fb; border:1px solid #d8e2ef; border-left:4px solid #5676aa; border-radius:8px; padding:12px 16px; margin:.9em 0; font-size:15px; color:#2a3b55; line-height:1.8;}
   .calc b{color:#1f3a63;}
-  .calc .f{font-family:"SFMono-Regular",Consolas,"Courier New",monospace; background:#fff; border:1px solid #dbe3ee; border-radius:6px; padding:2px 7px; display:inline-block; margin:2px 0; font-size:13px; color:#143; white-space:nowrap;}
+  .calc .f{font-family:"SFMono-Regular",Consolas,"Courier New",monospace; background:#fff; border:1px solid #dbe3ee; border-radius:6px; padding:2px 7px; display:inline-block; margin:2px 0; font-size:14px; color:#143; white-space:nowrap;}
   .prem{border:1px solid var(--line); border-radius:12px; background:#fafbfa; padding:16px 18px; margin:1.3em 0;}
   .prem .ptitle{font-weight:700; color:var(--green-d); font-size:17px; margin:0 0 .2em;}
   .prem .psub{color:var(--sub); font-size:13px; margin:0 0 .9em;}
@@ -127,7 +127,25 @@
   .cba .sum{margin-top:13px; background:#eef4f0; border:1px solid #cfe3d6; border-radius:10px; padding:12px 15px; font-size:14.5px; color:#214; line-height:1.7; text-align:center;}
   @media (max-width:600px){ .cba .steps{grid-template-columns:1fr; gap:9px;} }
   /* 計算式を1行で独立表示（重なり防止） */
-  .fline{display:block; font-family:"SFMono-Regular",Consolas,"Courier New",monospace; background:#fff; border:1px solid #dbe3ee; border-radius:6px; padding:7px 11px; margin:.5em 0 0; font-size:13.5px; color:#143; line-height:1.5; overflow-x:auto; white-space:nowrap;}
+  .fline{display:block; font-family:"SFMono-Regular",Consolas,"Courier New",monospace; background:#fff; border:1px solid #dbe3ee; border-radius:6px; padding:8px 12px; margin:.5em 0; font-size:14.5px; color:#143; line-height:1.6; overflow-x:auto; white-space:nowrap;}
+  /* 規模比較（旧 fig2_scale をHTML化） */
+  .scale{margin:1.1em 0;}
+  .scale .stt{font-weight:700; color:var(--green-d); font-size:18px; margin:0;}
+  .scale .sts{color:var(--sub); font-size:13.5px; margin:.25em 0 1em;}
+  .scale .pair{display:grid; grid-template-columns:1fr auto 1fr; gap:12px; align-items:center;}
+  .scale .pane{background:#fff; border:1px solid var(--line); border-radius:12px; padding:14px 15px;}
+  .scale .pane.b{background:#f3f8f4; border-color:#cfe3d6;}
+  .scale .pane h4{margin:0 0 .1em; font-size:16px; color:var(--green-d);}
+  .scale .pane .note{color:var(--sub); font-size:12.5px; margin:0 0 .7em;}
+  .scale .row{display:flex; justify-content:space-between; gap:8px; font-size:14.5px; padding:5px 0; border-top:1px dashed #e3e8e1; line-height:1.5;}
+  .scale .row:first-of-type{border-top:0;}
+  .scale .row .lab{color:var(--sub);} .scale .row .val{font-weight:700; color:var(--ink); text-align:right;}
+  .scale .x{background:#d39a2e; color:#fff; font-weight:800; font-size:18px; width:46px; height:46px; border-radius:999px; display:flex; align-items:center; justify-content:center;}
+  .scale .snote{font-size:12.5px; color:var(--sub); margin:.9em 0 0; line-height:1.7;}
+  @media (max-width:600px){
+    .scale .pair{grid-template-columns:1fr; gap:8px;}
+    .scale .x{width:auto; height:34px; border-radius:999px; margin:0 auto; padding:0 16px;}
+  }
   table{border-collapse:collapse; width:100%; margin:1em 0; font-size:14px;}
   th,td{border:1px solid var(--line); padding:7px 9px; text-align:left;}
   th{background:var(--accent);}
@@ -258,8 +276,33 @@
 
     <h3>もし増田氏の「樹冠15%」で測り直すと？</h3>
     <p>今回の26haは「緑被率25%」基準。増田氏が掲げる<strong>樹冠15%</strong>（現状10.4%。第1回のとおり世界の主要都市は30〜40%目標で、15%はその控えめな“第一歩”）を直接の目標にすると、区全体で<strong>+4.6pt＝約157haの樹冠</strong>が必要（第1回試算）＝26haの<strong>約6倍</strong>。研究者の1haあたりの数字を<strong>単純に当てはめて計算すると</strong>こうなります。</p>
-    <img src="fig2_scale.png" alt="緑被率25%基準(26ha・費用2.79〜4.76億・便益11.55億)と樹冠15%基準(157ha・費用17〜29億・便益70億・約6倍)の比較">
-    <p>ただし「6倍すれば済む」という単純な話ではありません。便益の96.7%は雨水便益1本に依存しており、その金額は<strong>1か所の事例をもとにした単純な計算構造</strong>です。<strong>実際に政策を実行に移すには、グレーインフラ（既存の下水道・調節池）の実態などを考慮し、費用と便益をより正確に計測し直す必要があります。</strong>規模を6倍にすれば、この計測の必要性はいっそう大きくなります。植える木の本数も、157haを<strong>研究者が用いた「成木1本あたり樹冠 約100㎡」の仮定</strong>（<a href="researcher/social_cba_benefits.md" target="_blank" rel="noopener">研究者の便益分析メモ「8. 既存大径木保全の便益」</a>）で割ると <span class="f">約1.6万本</span> 規模。密集市街地でこれだけの用地と管理を確保する難度は、26haの場合より<strong>格段に高く</strong>なります。</p>
+    <div class="scale">
+      <p class="stt">もし「樹冠15%（増田氏の目標）」で測り直すと？ ―― 規模は約6倍</p>
+      <p class="sts">第2回の“1haあたりの数字”を単純に当てはめた、ごく粗い比較です</p>
+      <div class="pair">
+        <div class="pane">
+          <h4>緑被率25%が基準</h4>
+          <p class="note">研究者の26ha</p>
+          <div class="row"><span class="lab">必要な樹冠</span><span class="val">約26ha</span></div>
+          <div class="row"><span class="lab">費用</span><span class="val">約2.79〜4.76億円</span></div>
+          <div class="row"><span class="lab">便益</span><span class="val">約11.55億円</span></div>
+          <div class="row"><span class="lab">費用1あたりの便益</span><span class="val">約2.4〜4.1倍</span></div>
+        </div>
+        <div class="x">×6</div>
+        <div class="pane b">
+          <h4>樹冠15%が基準</h4>
+          <p class="note">増田氏の目標・約6倍</p>
+          <div class="row"><span class="lab">必要な樹冠</span><span class="val">約157ha</span></div>
+          <div class="row"><span class="lab">費用</span><span class="val">約17〜29億円</span></div>
+          <div class="row"><span class="lab">便益</span><span class="val">約70億円</span></div>
+          <div class="row"><span class="lab">費用1あたりの便益</span><span class="val">約2.4〜4.1倍</span></div>
+        </div>
+      </div>
+      <p class="snote">※費用1あたりの便益（B/C）は単純計算では同じですが、便益の大半を占める雨水分の不確実さは規模を上げても残ります。</p>
+    </div>
+    <p>ただし「6倍すれば済む」という単純な話ではありません。便益の96.7%は雨水便益1本に依存しており、その金額は<strong>1か所の事例をもとにした単純な計算構造</strong>です。<strong>実際に政策を実行に移すには、グレーインフラ（既存の下水道・調節池）の実態などを考慮し、費用と便益をより正確に計測し直す必要があります。</strong>規模を6倍にすれば、この計測の必要性はいっそう大きくなります。</p>
+    <div class="calc"><b>補足：「1本あたりの樹冠」をどう見るか</b>　研究者の資料に出てくる「1本＝約100㎡」は、<strong>直径90cm級の巨木（大径木）を守る効果を測るための数値</strong>（<a href="researcher/social_cba_benefits.md" target="_blank" rel="noopener">便益メモ「8. 既存大径木保全」</a>）で、これから新しく植える木の標準ではありません。一般に、よく育った街路樹で<strong>1本あたり樹冠50〜100㎡</strong>（枝葉の差し渡し8〜11m）、若木や中木が中心ならもっと小さく<strong>10〜30㎡</strong>程度です。そこで157haを現実的な平均で割り直すと――<span class="fline">157ha ÷ 100㎡ ＝ 約1.6万本　／　÷ 50㎡ ＝ 約3.1万本　／　÷ 20㎡ ＝ 約7.8万本</span>つまり巨木前提なら約1.6万本ですが、<strong>現実的には約3万本〜、若木中心なら数万本以上</strong>になります（第3回でも同じ枠組みで検証）。密集市街地でこれだけの本数の用地と管理を確保する難度は、26haの場合より<strong>格段に高く</strong>なります。</div>
+    <div class="calc"><b>費用便益のチェックとしては</b>　研究者の26ha試算は費用を<strong>「面積あたり」で積んでいる</strong>ため、1本あたり樹冠の大小は26haのB/Cを直接は動かしません。ただし<strong>本数ベースで植栽・維持費を見積もり直すと、1本を小さく（＝本数を多く）見るほど費用は増えます</strong>。実装前には、現実的な樹種・植栽密度で1本あたり費用を置き、本数×単価でも費用を検算しておくべきです（巨木前提のままだと本数＝費用を小さく見積もりやすい）。</div>
 
     <h2>1. まず、研究者の「最終成果物」を見る</h2>
     <p>このブログのいちばん上に置いてあるのが、<strong>研究者本人による調査結果</strong>（図解版ページ）です。その要約スライドには、次の内容がまとまっています。</p>
